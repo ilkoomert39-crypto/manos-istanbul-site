@@ -1099,12 +1099,17 @@ header.hdr-scrolled{box-shadow:0 8px 40px -12px rgba(0,0,0,.7)}
 .tst-city{font-size:.7rem;color:var(--stone);letter-spacing:.06em;text-transform:uppercase}
 
 /* Güven rozeti */
-.trust-bar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:2.4rem 0}
-.trust-inner{display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;text-align:center}
-.trust-item{display:flex;flex-direction:column;align-items:center;gap:.4rem}
-.trust-icon{font-size:1.4rem}
-.trust-label{font-weight:500;font-size:.88rem}
-.trust-sub{font-size:.76rem;color:var(--stone)}
+.trust-bar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}
+.trust-inner{display:grid;grid-template-columns:repeat(5,1fr)}
+.trust-item{display:flex;flex-direction:column;align-items:center;gap:.9rem;padding:2.4rem 1.5rem;border-left:1px solid var(--line);position:relative;transition:background .3s}
+.trust-item:first-child{border-left:none}
+.trust-item::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%) scaleX(0);width:32px;height:1px;background:var(--brass);transition:transform .35s var(--ease)}
+.trust-item:hover{background:var(--card)}
+.trust-item:hover::after{transform:translateX(-50%) scaleX(1)}
+.trust-svg{width:28px;height:28px;stroke:var(--brass);flex:none;transition:transform .3s var(--ease)}
+.trust-item:hover .trust-svg{transform:translateY(-2px)}
+.trust-label{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);font-weight:500}
+.trust-sub{font-size:.76rem;color:var(--stone);text-align:center;max-width:16ch;line-height:1.5}
 
 /* Instagram grid */
 .insta-section{padding-bottom:5rem}
@@ -1117,6 +1122,9 @@ header.hdr-scrolled{box-shadow:0 8px 40px -12px rgba(0,0,0,.7)}
 
 @media(max-width:1080px){
   .trust-inner{grid-template-columns:repeat(3,1fr)}
+  .trust-item{border-top:1px solid var(--line)}
+  .trust-item:nth-child(1),.trust-item:nth-child(2),.trust-item:nth-child(3){border-top:none}
+  .trust-item:nth-child(3n+1){border-left:none}
   .insta-grid{grid-template-columns:repeat(3,1fr)}
   .tst-grid{grid-template-columns:1fr}
   .sb-inner{flex-direction:column;align-items:flex-start}
@@ -1128,6 +1136,9 @@ header.hdr-scrolled{box-shadow:0 8px 40px -12px rgba(0,0,0,.7)}
   .plr-price{font-size:1rem}
   .insta-grid{grid-template-columns:repeat(2,1fr)}
   .trust-inner{grid-template-columns:repeat(2,1fr)}
+  .trust-item{border-top:1px solid var(--line)}
+  .trust-item:nth-child(odd){border-left:none}
+  .trust-item:nth-child(1),.trust-item:nth-child(2){border-top:none}
   .tst-grid{grid-template-columns:1fr}
 }
 

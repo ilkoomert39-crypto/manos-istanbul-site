@@ -158,19 +158,48 @@ export default function HomePage() {
       {/* GÜVEN ROZETLERI */}
       <section className="trust-bar">
         <div className="wrap trust-inner">
-          {[
-            { icon: '🔒', label: '256-bit SSL', sub: 'Güvenli ödeme' },
-            { icon: '↩', label: '14 Gün İade', sub: 'Koşulsuz iade garantisi' },
-            { icon: '◈', label: 'Orijinal 585', sub: 'Ayar belgeli ürünler' },
-            { icon: '✦', label: 'El Yapımı', sub: 'Kapalıçarşı atölyesi' },
-            { icon: '🚚', label: 'Hızlı Kargo', sub: '1–3 iş günü teslimat' },
-          ].map(t => (
-            <div key={t.label} className="trust-item">
-              <span className="trust-icon">{t.icon}</span>
-              <span className="trust-label">{t.label}</span>
-              <span className="trust-sub">{t.sub}</span>
-            </div>
-          ))}
+          <div className="trust-item">
+            <svg className="trust-svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
+              <path d="M16 3L5 8v8c0 7 4.8 12.5 11 14 6.2-1.5 11-7 11-14V8L16 3z"/>
+              <path d="M11 16l3.5 3.5L21 13"/>
+            </svg>
+            <span className="trust-label">256-bit SSL</span>
+            <span className="trust-sub">Güvenli ödeme altyapısı</span>
+          </div>
+          <div className="trust-item">
+            <svg className="trust-svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
+              <path d="M6 16a10 10 0 1 0 10-10"/>
+              <path d="M6 8v8h8"/>
+            </svg>
+            <span className="trust-label">14 Gün İade</span>
+            <span className="trust-sub">Koşulsuz iade garantisi</span>
+          </div>
+          <div className="trust-item">
+            <svg className="trust-svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
+              <path d="M16 4l2.9 8.7H28l-7.4 5.4 2.8 8.6L16 21.6l-7.4 5.1 2.8-8.6L4 12.7h9.1z"/>
+            </svg>
+            <span className="trust-label">Ayar Sertifikası</span>
+            <span className="trust-sub">Her ürünle 585 belgesi</span>
+          </div>
+          <div className="trust-item">
+            <svg className="trust-svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
+              <path d="M8 10c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+              <path d="M6 14h20v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V14z"/>
+              <path d="M13 20c0-1.7 1.3-3 3-3s3 1.3 3 3v6h-6v-6z"/>
+            </svg>
+            <span className="trust-label">El Yapımı</span>
+            <span className="trust-sub">Kapalıçarşı atölyesi</span>
+          </div>
+          <div className="trust-item">
+            <svg className="trust-svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2">
+              <path d="M2 20h20V10H2z"/>
+              <path d="M22 14h4l4 6v4h-8"/>
+              <circle cx="8" cy="24" r="3"/>
+              <circle cx="24" cy="24" r="3"/>
+            </svg>
+            <span className="trust-label">Hızlı Kargo</span>
+            <span className="trust-sub">1–3 iş günü teslimat</span>
+          </div>
         </div>
       </section>
 
