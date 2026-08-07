@@ -1,16 +1,31 @@
-# Manos İstanbul — Site Tasarım Mockup'ları
+# Manos İstanbul — Site Tasarım Mockup'ları & Next.js Uygulaması
 
 14K altın mücevher markası Manos İstanbul için geliştirilen premium e-ticaret tasarım
-mockup'ları. Tamamı tek dosyalık HTML/CSS/JS (bağımlılık yok, doğrudan tarayıcıda açılır).
+çalışmaları.
 
-## Güncel (v5) — kemik/mürekkep/pirinç-altın palet, Fraunces + IBM Plex Mono, 585 ayar damgası imza öğe
-- `manos-istanbul-anasayfa-v5.html` — Ana sayfa: koyu header, mega menü, canlı arama önerisi, hero slider, kategori vitrini, bento ürün grid'i
-- `manos-urun-detay-v5.html` — Ürün detay: galeri + büyüteç + lightbox, kazıma, sertifika, yorumlar, paketleme seçimi, teslimat takvimi
+## `nextjs-app/` — Çalışan Next.js uygulaması (güncel)
+Sayfaları gerçek route'larla birbirine bağlı, derlenip çalıştırılabilir uygulama:
+- `/` — Ana sayfa (hero slider, kategori vitrini, ürün grid'i)
+- `/urunler` — Ürün listeleme (kategori filtreli)
+- `/urunler/[slug]` — Ürün detay
+- `/sepet` — Sepet
 
-## Önceki iterasyonlar (arşiv)
-- `manos-istanbul-anasayfa.html` … `v4.html` — tasarım sürecindeki ara adımlar
-- `manos-urun-detay.html`, `manos-sepet.html` — erken dönem ürün detay / sepet sayfaları
-- `kuyumcu-anasayfa.html` — jenerik kuyumcu konsept denemesi
+Kurulum ve detaylar için `nextjs-app/README.md`.
+
+```bash
+cd nextjs-app
+npm install
+npm run build && npm run start
+```
+
+## Statik HTML mockup'ları (arşiv — tasarım süreci)
+Tamamı tek dosyalık HTML/CSS/JS, bağımlılık yok, doğrudan tarayıcıda açılır.
+
+- `manos-istanbul-anasayfa-v5.html`, `manos-urun-detay-v5.html` — Next.js uygulamasının
+  temel aldığı, en gelişmiş statik tasarım sürümü (kemik/mürekkep/pirinç-altın palet,
+  Fraunces + IBM Plex Mono, 585 ayar damgası imza öğe)
+- `manos-istanbul-anasayfa.html` … `v4.html`, `manos-urun-detay.html`, `manos-sepet.html`,
+  `kuyumcu-anasayfa.html` — tasarım sürecindeki ara adımlar
 
 ## Diğer
 - `manos-ozel-yazilim-teklifi.pptx` — OpenCart → özel yazılım geçiş teklif sunumu
