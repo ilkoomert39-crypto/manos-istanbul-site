@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Toast from '@/components/Toast';
 import WelcomePopup from '@/components/WelcomePopup';
+import RevealObserver from '@/components/RevealObserver';
 
 export const metadata = {
   title: 'Manos İstanbul — 14K Altın Mücevher, Kapalıçarşı',
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
           <Toast />
+          <RevealObserver />
           <WelcomePopup />
         </CartProvider>
       </body>

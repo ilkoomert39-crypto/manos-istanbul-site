@@ -175,8 +175,8 @@ export default function Header() {
               <Link href="/urunler?kategori=ozel-koleksiyon">
                 Özel Koleksiyon<span className="nav-tag">YENİ</span>
               </Link>
-              <a href="https://manosistanbul.com/hakkimizda">Hakkımızda</a>
-              <a href="https://manosistanbul.com/iletisim">İletişim</a>
+              <a href="/hakkimizda">Hakkımızda</a>
+              <a href="/iletisim">İletişim</a>
             </nav>
             <span className="icon-divider" />
             <div className="head-icons">
