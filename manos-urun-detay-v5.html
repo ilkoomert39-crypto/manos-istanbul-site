@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Luna Eye Yüzük — Manos İstanbul</title>
+<meta name="description" content="Luna Eye Yüzük — 14 ayar altın, Kapalıçarşı'da el işçiliğiyle üretilir.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,460;0,9..144,560;1,9..144,460;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDE8DD; --card:#F6F2E9; --ink:#201C18; --ink-soft:#3A332C;
+    --brass:#8B6B3D; --brass-deep:#6E5530; --gold:#C9A46B; --stone:#746B60;
+    --line:rgba(32,28,24,.15); --ease:cubic-bezier(.22,.7,.24,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Public Sans',sans-serif;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body.lock{overflow:hidden}
+  ::selection{background:var(--ink);color:var(--paper)}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;background:none;border:none;cursor:pointer;color:inherit}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+  .display{font-family:'Fraunces',serif;font-weight:460;font-variation-settings:"opsz" 60}
+  .display-i{font-family:'Fraunces',serif;font-style:italic;font-weight:460;font-variation-settings:"opsz" 60}
+  .mono{font-family:'IBM Plex Mono',monospace}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+  .wrap{max-width:1400px;margin:0 auto;padding:0 3rem}
+
+  /* ---------- HALLMARK ---------- */
+  .hallmark{
+    --sz:96px;width:var(--sz);height:var(--sz);position:relative;display:grid;place-items:center;flex:none;
+    background:var(--ink);color:var(--paper);
+    clip-path:polygon(50% 0%,93% 25%,93% 75%,50% 100%,7% 75%,7% 25%);text-align:center;line-height:1.15;
+  }
+  .hallmark b{display:block;font-family:'IBM Plex Mono';font-size:.92rem}
+  .hallmark span{display:block;font-family:'IBM Plex Mono';font-size:.44rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);margin-top:.12rem}
+
+  /* ---------- HEADER (v5 ile aynı) ---------- */
+  .util-bar{background:var(--ink);color:#B9AD98;border-bottom:1px solid rgba(201,164,107,.22)}
+  .util-in{max-width:1400px;margin:0 auto;padding:.6rem 3rem;display:flex;justify-content:space-between;align-items:center;font-family:'IBM Plex Mono';font-size:.68rem;letter-spacing:.06em}
+  .util-in a:hover{color:var(--paper)}
+  .util-l{display:flex;gap:1.6rem;align-items:center}
+  .util-r{display:flex;gap:1.6rem;align-items:center}
+  .util-l .promo{color:var(--gold);font-weight:500;display:flex;align-items:center;gap:.5rem}
+  .util-l .promo svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:1.4}
+  .util-r span::before{content:"·";margin-right:1.6rem;color:rgba(185,173,152,.4)}
+
+  header{position:sticky;top:0;z-index:100;background:var(--ink);box-shadow:0 12px 32px -18px rgba(0,0,0,.5);border-bottom:1px solid rgba(201,164,107,.28)}
+  .head-in{max-width:1400px;margin:0 auto;padding:1.4rem 3rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;column-gap:2rem}
+  .head-l,.head-r{display:flex;align-items:center;gap:2.1rem}
+  .head-r{justify-content:flex-end}
+  .word{display:flex;align-items:center;gap:.85rem;justify-self:center}
+  .word::before,.word::after{content:"";width:22px;height:1px;background:rgba(201,164,107,.4)}
+  .word-mark{width:24px;height:24px;flex:none}
+  .word-mark path{stroke:var(--gold);fill:none;stroke-width:1.3}
+  .word b{font-family:'Fraunces',serif;font-weight:560;font-size:1.55rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paper)}
+  nav{display:flex;gap:2.1rem;align-items:center}
+  nav>a{font-family:'IBM Plex Mono';font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;position:relative;padding:.2rem 0;color:#DCD3C2;transition:color .25s}
+  nav>a::after{content:"";position:absolute;left:0;right:0;bottom:-.3rem;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .35s var(--ease)}
+  nav>a:hover{color:var(--paper)}
+  nav>a:hover::after{transform:scaleX(1)}
+  .nav-tag{font-family:'IBM Plex Mono';font-size:.55rem;letter-spacing:.06em;color:var(--gold);border:1px solid var(--gold);padding:.05rem .35rem;margin-left:.5rem;vertical-align:middle;border-radius:2px;text-transform:none}
+  .icon-divider{width:1px;height:22px;background:rgba(201,164,107,.28)}
+
+  .has-mega{position:static}
+  .mega-trigger{font-family:'IBM Plex Mono';font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;position:relative;padding:.2rem 0;display:flex;align-items:center;gap:.4rem;color:#DCD3C2;transition:color .25s}
+  .mega-trigger::after{content:"";position:absolute;left:0;right:0;bottom:-.3rem;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .35s var(--ease)}
+  .mega-trigger svg{width:8px;height:8px;fill:none;stroke:currentColor;stroke-width:1.6;transition:transform .3s var(--ease)}
+  .has-mega:hover .mega-trigger,.has-mega.open .mega-trigger{color:var(--paper)}
+  .has-mega.open .mega-trigger::after{transform:scaleX(1)}
+  .has-mega.open .mega-trigger svg{transform:rotate(180deg)}
+  .mega{
+    position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--line);
+    box-shadow:0 24px 50px -30px rgba(32,28,24,.25);
+    opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;
+    z-index:90;
+  }
+  .has-mega.open .mega{opacity:1;visibility:visible;transform:translateY(0)}
+  .mega-in{max-width:1400px;margin:0 auto;padding:2.6rem 3rem;display:grid;grid-template-columns:repeat(4,1fr) 1.1fr;gap:2.4rem}
+  .mega-col h5{font-family:'IBM Plex Mono';font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:1rem;padding-bottom:.8rem;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:.7rem}
+  .mega-col h5 img{width:34px;height:34px;object-fit:cover;flex:none}
+  .mega-col a{display:block;font-size:.88rem;color:var(--ink-soft);padding:.4rem 0;transition:color .25s,padding-left .25s}
+  .mega-col a:hover{color:var(--ink);padding-left:.3rem}
+  .mega-col .all{margin-top:.5rem;font-family:'IBM Plex Mono';font-size:.72rem;color:var(--brass-deep);border-top:1px solid var(--line);padding-top:.8rem}
+  .mega-feat{position:relative;overflow:hidden;min-height:260px}
+  .mega-feat img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+  .mega-feat::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(32,28,24,.75),rgba(32,28,24,.05) 55%)}
+  .mega-feat-txt{position:absolute;left:1.4rem;right:1.4rem;bottom:1.3rem;z-index:2;color:var(--paper)}
+  .mega-feat-txt span{font-family:'IBM Plex Mono';font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:#DCCFB6}
+  .mega-feat-txt h4{font-family:'Fraunces',serif;font-weight:460;font-size:1.3rem;margin:.35rem 0 .5rem}
+  .mega-feat-txt a{font-size:.76rem;font-weight:500;border-bottom:1px solid rgba(237,232,221,.5)}
+  .mega-feat-txt a:hover{border-color:var(--paper)}
+  @media(max-width:1080px){.mega-in{grid-template-columns:repeat(2,1fr);}.mega-feat{grid-column:span 2;min-height:180px}}
+
+  .head-icons{display:flex;align-items:center;gap:.3rem}
+  .icon-btn{position:relative;color:var(--paper);display:flex;align-items:center;gap:.5rem;padding:.55rem;min-width:40px;min-height:40px;justify-content:center;border-radius:2px;transition:background .25s,color .25s}
+  .icon-btn:hover{background:rgba(201,164,107,.14);color:var(--gold)}
+  .icon-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.4;flex:none}
+  .count{position:absolute;top:.15rem;right:.15rem;font-family:'IBM Plex Mono';font-size:.6rem;background:var(--gold);color:var(--ink);border-radius:99px;min-width:16px;height:16px;line-height:16px;display:grid;place-items:center;padding:0 4px;transform:scale(0);transition:transform .3s var(--ease)}
+  .count.on{transform:scale(1)}
+  .burger{display:none}
+
+  /* ---------- BREADCRUMB ---------- */
+  .crumbs{max-width:1400px;margin:0 auto;padding:1.5rem 3rem .3rem;display:flex;gap:.6rem;flex-wrap:wrap;font-family:'IBM Plex Mono';font-size:.7rem;letter-spacing:.03em;color:var(--stone)}
+  .crumbs a:hover{color:var(--brass-deep)}
+  .crumbs b{color:var(--ink);font-weight:500}
+
+  /* ---------- PDP ---------- */
+  .pdp{max-width:1400px;margin:0 auto;padding:1.6rem 3rem 5rem;display:grid;grid-template-columns:1.1fr .9fr;gap:4.5rem;align-items:start}
+
+  .gallery{position:sticky;top:96px;display:grid;grid-template-columns:78px 1fr;gap:1rem}
+  .thumbs{display:flex;flex-direction:column;gap:.8rem}
+  .thumbs button{border:1px solid var(--line);background:var(--card);aspect-ratio:1;overflow:hidden;padding:0;transition:border-color .25s}
+  .thumbs button.on{border-color:var(--ink)}
+  .thumbs img{width:100%;height:100%;object-fit:cover}
+  .stage{position:relative;background:#000;overflow:hidden;aspect-ratio:1}
+  .stage img{width:100%;height:100%;object-fit:cover;transition:opacity .4s ease}
+  .stage img.fade{opacity:0}
+  .stage .hallmark{position:absolute;left:.9rem;bottom:.9rem;z-index:2;--sz:80px}
+  .stage .hallmark b{font-size:.78rem}
+  .stage .hallmark span{font-size:.38rem}
+
+  .note-line{grid-column:1/-1;display:flex;gap:1rem;align-items:flex-start;border-top:1px solid var(--line);padding-top:1.2rem;margin-top:.4rem}
+  .note-line svg{width:22px;height:22px;stroke:var(--brass);fill:none;stroke-width:1.2;flex:none;margin-top:.1rem}
+  .note-line p{font-size:.86rem;color:var(--stone)}
+  .note-line b{color:var(--ink);font-weight:500}
+
+  /* ---------- BİLGİ KOLONU ---------- */
+  .info{display:flex;flex-direction:column;gap:1.5rem}
+  .info .kind{font-family:'IBM Plex Mono';font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--stone)}
+  .info h1{font-size:clamp(2rem,3.6vw,3rem);line-height:1.06;letter-spacing:-.01em}
+  .price-row{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap}
+  .price{font-family:'IBM Plex Mono';font-size:1.5rem}
+  .price-note{font-size:.76rem;color:var(--stone)}
+  .info>.desc{color:var(--ink-soft);font-size:.98rem;max-width:52ch}
+
+  .opt{display:flex;flex-direction:column;gap:.7rem}
+  .opt-head{display:flex;justify-content:space-between;align-items:baseline}
+  .opt-head h4{font-family:'IBM Plex Mono';font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--stone)}
+  .opt-head span{font-size:.82rem}
+  .opt-head button{font-size:.72rem;color:var(--brass-deep);border-bottom:1px solid var(--line)}
+  .opt-head button:hover{border-color:var(--brass-deep)}
+  .swatches{display:flex;gap:.7rem}
+  .swatch{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);position:relative}
+  .swatch::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid transparent;transition:border-color .25s}
+  .swatch.on::after{border-color:var(--ink)}
+  .sw-sari{background:#C9A15E}.sw-yesil{background:#AEB07C}.sw-rose{background:#CC9B85}
+  .sizes{display:flex;gap:.5rem;flex-wrap:wrap}
+  .sizes button{min-width:40px;height:40px;border:1px solid var(--line);font-family:'IBM Plex Mono';font-size:.8rem;padding:0 .5rem;transition:all .25s}
+  .sizes button:hover{border-color:var(--ink)}
+  .sizes button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  .buy-row{display:flex;gap:.9rem;align-items:stretch}
+  .qty{display:inline-flex;align-items:center;border:1px solid var(--ink)}
+  .qty button{width:42px;min-height:52px;font-size:1.1rem}
+  .qty button:hover{background:rgba(139,107,61,.12)}
+  .qty span{min-width:32px;text-align:center;font-family:'IBM Plex Mono';font-size:.88rem}
+  .btn-block{flex:1;background:var(--ink);color:var(--paper);padding:1rem 1.4rem;font-size:.86rem;font-weight:500;display:flex;align-items:center;justify-content:center;gap:.7rem;min-height:52px;transition:background .3s}
+  .btn-block:hover{background:var(--brass-deep)}
+  .fav-btn{width:52px;border:1px solid var(--line);display:grid;place-items:center;transition:border-color .25s;flex:none}
+  .fav-btn svg{width:18px;height:18px;fill:none;stroke:var(--ink);stroke-width:1.4}
+  .fav-btn:hover{border-color:var(--brass)}
+  .fav-btn.liked svg{fill:var(--brass);stroke:var(--brass)}
+
+  .wa-ask{display:inline-flex;gap:.6rem;align-items:center;font-size:.84rem;color:var(--stone);align-self:flex-start}
+  .wa-ask svg{width:16px;height:16px;fill:#25D366}
+  .wa-ask:hover{color:var(--ink)}
+
+  .specs{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1.1rem 0;display:grid;gap:.5rem}
+  .specs div{display:flex;justify-content:space-between;font-size:.86rem}
+  .specs span:first-child{color:var(--stone)}
+  .specs span:last-child{font-family:'IBM Plex Mono'}
+
+  .acc details{border-bottom:1px solid var(--line)}
+  .acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;padding:1.2rem .05rem;font-size:.98rem;transition:color .25s}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc summary:hover{color:var(--brass-deep)}
+  .acc summary::after{content:"+";font-family:'IBM Plex Mono';font-size:1.2rem;color:var(--brass);transition:transform .3s var(--ease);flex:none}
+  .acc details[open] summary::after{transform:rotate(45deg)}
+  .acc details>div{padding:0 .05rem 1.2rem;color:var(--stone);font-size:.9rem}
+
+  /* ---------- İLGİLİ ÜRÜNLER (bento, ana sayfa ile aynı mantık) ---------- */
+  .rel{padding:4rem 0 6rem;border-top:1px solid var(--line)}
+  .section-top{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:2.6rem;flex-wrap:wrap}
+  .section-top h2{font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:-.01em;margin-top:.5rem}
+  .rel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+  .product{position:relative}
+  .p-frame{position:relative;overflow:hidden;background:#000;aspect-ratio:1}
+  .p-frame img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+  .product:hover .p-frame img{transform:scale(1.045)}
+  .p-mark{position:absolute;right:.6rem;bottom:.6rem;z-index:2;--sz:56px}
+  .p-mark b{font-size:.6rem}.p-mark span{font-size:.34rem}
+  .p-body{padding-top:.8rem;display:flex;justify-content:space-between;align-items:baseline;gap:.8rem}
+  .p-name{font-size:.94rem}
+  .p-kind{display:block;font-family:'IBM Plex Mono';font-size:.58rem;letter-spacing:.05em;color:var(--stone);text-transform:uppercase;margin-top:.15rem}
+  .p-price{font-family:'IBM Plex Mono';font-size:.82rem;white-space:nowrap}
+
+  /* ---------- MOBİL SABİT BAR ---------- */
+  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--paper);border-top:1px solid var(--line);padding:.8rem 1.1rem calc(.8rem + env(safe-area-inset-bottom));display:none;gap:1rem;align-items:center;transform:translateY(110%);transition:transform .4s var(--ease)}
+  .mbar.on{transform:none}
+  .mbar .mp{display:flex;flex-direction:column;line-height:1.2}
+  .mbar .mp i{font-style:normal;font-family:'IBM Plex Mono';font-size:.58rem;color:var(--stone);text-transform:uppercase}
+  .mbar .mp b{font-family:'IBM Plex Mono';font-size:1rem;color:var(--brass-deep)}
+  .mbar .btn-block{min-height:46px}
+
+  /* ---------- PANELLER (sepet/arama/menü — v5 ile aynı) ---------- */
+  .overlay{position:fixed;inset:0;background:rgba(32,28,24,.4);z-index:140;opacity:0;visibility:hidden;transition:opacity .4s}
+  .overlay.on{opacity:1;visibility:visible}
+  .drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);background:var(--paper);z-index:150;display:flex;flex-direction:column;transform:translateX(102%);transition:transform .45s var(--ease)}
+  .drawer.on{transform:none}
+  .drawer-head{display:flex;justify-content:space-between;align-items:center;padding:1.3rem 1.6rem;border-bottom:1px solid var(--line)}
+  .drawer-head h3{font-size:1.1rem}
+  .drawer-close{font-size:1.5rem;padding:.4rem .6rem;min-width:40px;min-height:40px}
+  .drawer-body{flex:1;overflow-y:auto;padding:1.3rem 1.6rem;display:flex;flex-direction:column;gap:1.2rem}
+  .drawer-empty{margin:auto;text-align:center;color:var(--stone);font-size:.9rem}
+  .cart-item{display:grid;grid-template-columns:64px 1fr auto;gap:.9rem;align-items:center;border-bottom:1px solid var(--line);padding-bottom:1.1rem}
+  .cart-item img{width:64px;height:64px;object-fit:cover}
+  .cart-item h4{font-size:.92rem;font-weight:400}
+  .cart-item small{display:block;font-size:.68rem;color:var(--stone)}
+  .cart-item .cp{font-family:'IBM Plex Mono';font-size:.78rem;color:var(--brass-deep)}
+  .qty.sm{border-color:var(--line);margin-top:.3rem}
+  .qty.sm button{width:26px;min-height:26px;font-size:.8rem}
+  .cart-x{font-size:1.1rem;color:var(--stone);min-width:32px;min-height:32px}
+  .drawer-foot{border-top:1px solid var(--line);padding:1.2rem 1.6rem calc(1.2rem + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:.8rem}
+  .drawer-total{display:flex;justify-content:space-between;font-size:1.05rem}
+  .drawer-total b{font-family:'IBM Plex Mono';font-weight:400}
+
+  /* ---------- ARAMA (header'a bağlı, canlı öneri) ---------- */
+  .search{
+    position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--line);
+    box-shadow:0 24px 50px -30px rgba(32,28,24,.25);z-index:95;
+    opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .3s var(--ease),transform .3s var(--ease),visibility .3s;
+  }
+  .search.on{opacity:1;visibility:visible;transform:translateY(0)}
+  .search-in{max-width:1400px;margin:0 auto;padding:2.2rem 3rem 2.6rem}
+  .search-field{position:relative;display:flex;align-items:center;gap:1rem;border-bottom:1px solid var(--ink);padding-bottom:.9rem}
+  .search-field svg{width:19px;height:19px;stroke:var(--brass);fill:none;stroke-width:1.4;flex:none}
+  .search input{flex:1;background:transparent;border:none;font-family:'Fraunces',serif;font-size:clamp(1.3rem,2.6vw,1.7rem);color:var(--ink);padding:.2rem 0}
+  .search input::placeholder{color:var(--stone)}
+  .search-close{font-size:1.5rem;padding:.3rem .6rem;min-width:40px;min-height:40px;color:var(--stone);flex:none}
+  .search-close:hover{color:var(--ink)}
+  .search-hint{margin-top:.9rem;font-family:'IBM Plex Mono';font-size:.68rem;letter-spacing:.06em;color:var(--stone)}
+  .search-hint b{color:var(--brass-deep);font-weight:500}
+  .search-results{margin-top:1.8rem}
+  .search-results h6{font-family:'IBM Plex Mono';font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:1.1rem}
+  .sr-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+  .sr-card{display:flex;flex-direction:column;gap:.6rem}
+  .sr-img{aspect-ratio:1;overflow:hidden;background:#000}
+  .sr-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+  .sr-card:hover .sr-img img{transform:scale(1.05)}
+  .sr-name{font-size:.88rem}
+  .sr-kind{display:block;font-family:'IBM Plex Mono';font-size:.58rem;letter-spacing:.05em;color:var(--stone);text-transform:uppercase;margin-top:.15rem}
+  .sr-price{font-family:'IBM Plex Mono';font-size:.8rem;color:var(--brass-deep);margin-top:.1rem}
+  .sr-empty{font-size:.88rem;color:var(--stone);padding:1rem 0}
+  .sr-all{display:inline-block;margin-top:1.6rem;font-family:'IBM Plex Mono';font-size:.72rem;letter-spacing:.06em;color:var(--brass-deep);border-bottom:1px solid var(--line)}
+  .sr-all:hover{border-color:var(--brass-deep)}
+
+  .mnav{position:fixed;top:0;left:0;bottom:0;width:min(320px,86vw);background:var(--ink);color:var(--paper);z-index:150;padding:4.4rem 2rem 2rem;transform:translateX(-102%);transition:transform .45s var(--ease);display:flex;flex-direction:column;gap:.3rem}
+  .mnav.on{transform:none}
+  .mnav a{font-size:1.3rem;padding:.65rem 0;border-bottom:1px solid rgba(237,232,221,.14);font-family:'Fraunces',serif}
+  .mnav-cats{display:flex;flex-direction:column;padding-left:1rem;border-bottom:1px solid rgba(237,232,221,.14)}
+  .mnav-cats a{font-family:'IBM Plex Mono';font-size:.8rem;padding:.5rem 0;border-bottom:none;color:#C9BFAE}
+  .mnav-close{position:absolute;top:1.2rem;right:1.3rem;font-size:1.7rem;min-width:40px;min-height:40px}
+
+  /* ---------- ÖLÇÜ REHBERİ ---------- */
+  .modal{position:fixed;inset:0;z-index:150;display:grid;place-items:center;padding:1.2rem;opacity:0;visibility:hidden;transition:opacity .4s}
+  .modal.on{opacity:1;visibility:visible}
+  .modal-card{background:var(--paper);width:min(520px,100%);max-height:88vh;overflow:auto;padding:2.2rem 2rem;position:relative}
+  .modal-card h3{font-size:1.4rem;margin-bottom:.4rem}
+  .modal-card>p{color:var(--stone);font-size:.88rem;margin-bottom:1.2rem}
+  .modal-close{position:absolute;top:.9rem;right:1rem;font-size:1.6rem;padding:.3rem .6rem;min-width:40px;min-height:40px}
+  .size-table{width:100%;border-collapse:collapse;font-size:.84rem}
+  .size-table th{font-family:'IBM Plex Mono';font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);text-align:left;padding:.5rem .3rem;border-bottom:1px solid var(--line)}
+  .size-table td{padding:.5rem .3rem;border-bottom:1px solid var(--line);color:var(--stone);font-family:'IBM Plex Mono'}
+  .size-table td:first-child{color:var(--ink)}
+
+  /* ---------- İÇ SEKMELER (Açıklama/Özellikler/Yorumlar) ---------- */
+  .pdp-tabs{position:sticky;top:73px;z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
+  .pdp-tabs .wrap{display:flex;gap:2.2rem;padding-top:0;padding-bottom:0}
+  .pdp-tabs a{font-family:'IBM Plex Mono';font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);padding:.9rem 0;border-bottom:2px solid transparent;transition:color .25s,border-color .25s}
+  .pdp-tabs a:hover,.pdp-tabs a.on{color:var(--ink);border-color:var(--brass)}
+
+  /* ---------- BÜYÜTEÇ MERCEĞİ ---------- */
+  .stage{cursor:zoom-in}
+  .lens{position:absolute;border:1px solid var(--brass);background:rgba(255,255,255,.1);pointer-events:none;display:none;z-index:3}
+  .zoom-pane{position:absolute;top:0;left:calc(100% + 1.2rem);width:100%;height:100%;background-repeat:no-repeat;border:1px solid var(--line);display:none;z-index:5;background-color:#000}
+  @media(min-width:1024px){.stage:hover .lens,.stage:hover .zoom-pane{display:block}}
+
+  /* ---------- FİYAT ALTI: STOK / TAKSİT ---------- */
+  .stock-line{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--brass-deep)}
+  .stock-line .dot{width:6px;height:6px;border-radius:50%;background:var(--brass-deep)}
+  .installment{border:1px solid var(--line);padding:.85rem 1rem;display:flex;justify-content:space-between;align-items:center;font-size:.84rem;background:var(--card)}
+  .installment b{font-family:'IBM Plex Mono';font-weight:500}
+  .installment button{font-size:.72rem;color:var(--brass-deep);border-bottom:1px solid var(--line)}
+
+  /* ---------- KİŞİSELLEŞTİRME (KAZIMA) ---------- */
+  .engrave{border:1px solid var(--line);padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.7rem}
+  .engrave label{display:flex;gap:.7rem;align-items:flex-start;font-size:.88rem;cursor:pointer}
+  .engrave input[type=checkbox]{appearance:none;width:18px;height:18px;border:1px solid var(--stone);flex:none;margin-top:.15rem;display:grid;place-items:center;cursor:pointer;transition:all .2s}
+  .engrave input[type=checkbox]:checked{background:var(--ink);border-color:var(--ink)}
+  .engrave input[type=checkbox]:checked::after{content:"✓";color:var(--paper);font-size:.68rem}
+  .engrave small{display:block;color:var(--stone);font-size:.78rem;margin-top:.15rem}
+  .engrave-input{display:none;gap:.6rem;align-items:center}
+  .engrave-input.on{display:flex}
+  .engrave-input input[type=text]{flex:1;border:1px solid var(--line);background:#fff;padding:.6rem .8rem;font-family:'IBM Plex Mono';font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+  .engrave-input span{font-family:'IBM Plex Mono';font-size:.74rem;color:var(--brass-deep);white-space:nowrap}
+
+  /* ---------- SERTİFİKA ŞERİDİ ---------- */
+  .cert-strip{display:flex;gap:1.4rem;align-items:center;background:var(--ink);color:var(--paper);padding:1.2rem 1.4rem}
+  .cert-strip svg{width:30px;height:30px;stroke:var(--brass);fill:none;stroke-width:1.1;flex:none}
+  .cert-strip p{font-size:.84rem;color:#C9BFAE}
+  .cert-strip b{color:var(--paper);font-weight:500;font-family:'IBM Plex Mono';display:block;font-size:.78rem;letter-spacing:.06em;margin-bottom:.2rem}
+
+  /* ---------- YORUMLAR ---------- */
+  .reviews-sec{padding:4.5rem 0;border-top:1px solid var(--line)}
+  .rating-head{display:flex;gap:2.4rem;align-items:center;flex-wrap:wrap;margin-bottom:2.6rem}
+  .rating-num{font-family:'Fraunces',serif;font-size:3.2rem;font-weight:460;line-height:1}
+  .stars{color:var(--brass);font-size:1rem;letter-spacing:.1em}
+  .rating-sub{font-family:'IBM Plex Mono';font-size:.7rem;color:var(--stone);margin-top:.3rem}
+  .rev-bars{display:flex;flex-direction:column;gap:.35rem;min-width:180px}
+  .rev-bar{display:grid;grid-template-columns:14px 1fr 28px;gap:.6rem;align-items:center;font-family:'IBM Plex Mono';font-size:.68rem;color:var(--stone)}
+  .rev-bar i{height:4px;background:var(--line);position:relative;display:block}
+  .rev-bar i::after{content:"";position:absolute;left:0;top:0;bottom:0;width:var(--w,0%);background:var(--brass)}
+  .rev-list{display:grid;gap:1.6rem}
+  .rev{border-top:1px solid var(--line);padding-top:1.4rem}
+  .rev-top{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;margin-bottom:.4rem}
+  .rev-top b{font-weight:500}
+  .rev-top span{font-family:'IBM Plex Mono';font-size:.68rem;color:var(--stone)}
+  .rev p{font-size:.9rem;color:var(--ink-soft)}
+  .rev .verified{display:inline-flex;gap:.35rem;align-items:center;font-family:'IBM Plex Mono';font-size:.62rem;color:var(--brass-deep);margin-top:.5rem}
+
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox{position:fixed;inset:0;z-index:170;background:rgba(32,28,24,.97);display:grid;place-items:center;opacity:0;visibility:hidden;transition:opacity .35s}
+  .lightbox.on{opacity:1;visibility:visible}
+  .lightbox img{max-width:min(88vw,880px);max-height:82vh;object-fit:contain}
+  .lb-close,.lb-prev,.lb-next{position:absolute;color:var(--paper);min-width:48px;min-height:48px;display:grid;place-items:center;font-size:1.6rem}
+  .lb-close{top:1rem;right:1.2rem}
+  .lb-prev{left:1rem;top:50%;transform:translateY(-50%);font-size:2rem}
+  .lb-next{right:1rem;top:50%;transform:translateY(-50%);font-size:2rem}
+  .lb-count{position:absolute;bottom:1.4rem;left:50%;transform:translateX(-50%);font-family:'IBM Plex Mono';font-size:.74rem;color:#C9BFAE}
+
+  /* ---------- PAKETLEME & TESLİMAT ---------- */
+  .pack-sec{padding:4.6rem 0;border-top:1px solid var(--line)}
+  .pack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+  .pack-card{border:1px solid var(--line);padding:1.6rem 1.4rem;cursor:pointer;transition:border-color .25s,background .25s;position:relative;text-align:left}
+  .pack-card:hover{border-color:var(--brass)}
+  .pack-card.on{border-color:var(--ink);background:var(--card)}
+  .pack-card svg{width:26px;height:26px;stroke:var(--brass);fill:none;stroke-width:1.1;margin-bottom:.9rem}
+  .pack-card .pc-fee{font-family:'IBM Plex Mono';font-size:.7rem;color:var(--brass-deep);display:block;margin-top:.5rem}
+  .pack-card h4{font-size:1rem;margin-bottom:.35rem;font-weight:400}
+  .pack-card p{font-size:.82rem;color:var(--stone)}
+  .pack-card .radio{position:absolute;top:1.3rem;right:1.3rem;width:16px;height:16px;border:1px solid var(--stone);border-radius:50%}
+  .pack-card.on .radio{border-color:var(--ink)}
+  .pack-card.on .radio::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--ink)}
+
+  .delivery-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:2.8rem}
+  .dstep{border-top:2px solid var(--brass);padding-top:1rem}
+  .dstep:nth-child(n+3){border-top-color:var(--line)}
+  .dstep .dn{font-family:'IBM Plex Mono';font-size:.68rem;color:var(--brass)}
+  .dstep h5{font-size:.92rem;margin:.4rem 0 .3rem;font-weight:400}
+  .dstep p{font-size:.78rem;color:var(--stone)}
+
+  /* ---------- MARKA KİMLİĞİ ŞERİDİ ---------- */
+  .brand-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .brand-strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);padding-left:3rem;padding-right:3rem}
+  .bstat{padding:2.2rem 2rem;border-left:1px solid var(--line)}
+  .bstat:first-child{border-left:none;padding-left:0}
+  .bstat b{display:block;font-family:'Fraunces',serif;font-size:1.9rem;font-weight:460}
+  .bstat span{font-family:'IBM Plex Mono';font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--stone)}
+
+  footer{border-top:1px solid var(--line);padding:0 0 2.2rem;margin-top:1rem}
+  .foot-news{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;padding:3rem 0;border-bottom:1px solid var(--line)}
+  .foot-news h3{font-size:1.3rem;max-width:24ch}
+  .foot-news form{display:flex;border-bottom:1px solid var(--ink);min-width:0;flex:1;max-width:380px}
+  .foot-news input{flex:1;min-width:0;background:transparent;border:none;padding:.6rem .1rem;font-family:'Public Sans';font-size:.9rem;color:var(--ink)}
+  .foot-news input::placeholder{color:var(--stone)}
+  .foot-news button{font-size:.8rem;font-weight:500;white-space:nowrap}
+  .foot-news button:hover{color:var(--brass-deep)}
+  .foot-main{padding:3.2rem 0 2.6rem;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr;gap:2rem}
+  .foot-social{display:flex;gap:.7rem;margin-top:1.1rem}
+  .foot-social a{width:34px;height:34px;border:1px solid var(--line);display:grid;place-items:center;transition:border-color .25s}
+  .foot-social a:hover{border-color:var(--brass)}
+  .foot-social svg{width:15px;height:15px;fill:none;stroke:var(--ink-soft);stroke-width:1.4}
+  .foot-trust{display:flex;justify-content:space-between;align-items:center;gap:1.4rem;flex-wrap:wrap;padding:1.6rem 0;border-top:1px solid var(--line)}
+  .badge-row{display:flex;gap:.6rem;flex-wrap:wrap}
+  .badge-row span{border:1px solid var(--line);padding:.32rem .75rem;font-family:'IBM Plex Mono';font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--stone)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2.5rem}
+  .foot-brand p{margin-top:1rem;color:var(--stone);font-size:.88rem;max-width:28ch}
+  .foot-col h5{font-family:'IBM Plex Mono';font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:1rem}
+  .foot-col a,.foot-col span{display:block;font-size:.88rem;color:var(--ink-soft);padding:.28rem 0}
+  .foot-col a:hover{color:var(--brass-deep)}
+  .foot-base{margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:'IBM Plex Mono';font-size:.68rem;color:var(--stone)}
+
+  .toast{position:fixed;left:50%;bottom:calc(1.5rem + env(safe-area-inset-bottom));transform:translate(-50%,140%);z-index:160;background:var(--ink);color:var(--paper);padding:.8rem 1.5rem;font-family:'IBM Plex Mono';font-size:.72rem;transition:transform .45s var(--ease);white-space:nowrap;max-width:92vw}
+  .toast.on{transform:translate(-50%,0)}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+
+  @media(max-width:1024px){
+    .pdp{grid-template-columns:1fr;gap:3rem}
+    .gallery{position:static}
+    .rel-grid{grid-template-columns:repeat(2,1fr)}
+    .sr-grid{grid-template-columns:repeat(3,1fr)}
+  }
+  @media(max-width:720px){
+    .util-in{padding:.5rem 1.1rem;font-size:.6rem}
+    .util-l a,.util-r span,.util-r a:nth-child(2){display:none}
+    .util-l .promo svg{width:11px;height:11px}
+    .wrap{padding:0 1.2rem}
+    .head-in{grid-template-columns:auto 1fr auto;padding:.85rem 1rem;column-gap:.6rem}
+    .head-l{display:none}
+    .word{font-size:1.2rem;justify-self:start}
+    .word::before,.word::after{display:none}
+    .word b{font-size:1.2rem}
+    .head-r nav,.icon-divider{display:none}
+    .head-r{gap:0}
+    nav{display:none}
+    .burger{display:flex}
+    .icon-btn{padding:.5rem;min-width:38px;min-height:38px}
+    .head-icons{gap:.1rem}
+    .search-in{padding:1.4rem 1.2rem 1.8rem}
+    .search input{font-size:1.15rem}
+    .sr-grid{grid-template-columns:repeat(2,1fr)}
+    .crumbs{padding:1.1rem 1.2rem .2rem;font-size:.64rem}
+    .pdp{padding:1.1rem 1.2rem 4rem;gap:2.4rem}
+    .gallery{grid-template-columns:1fr;gap:.7rem}
+    .thumbs{flex-direction:row;order:2;overflow-x:auto}
+    .thumbs button{width:64px;flex:none}
+    .stage{order:1}
+    .buy-row{flex-wrap:wrap}
+    .qty{order:1}
+    .fav-btn{order:2}
+    .btn-block{order:3;width:100%;flex:none}
+    .rel-grid{grid-template-columns:1fr 1fr;gap:.8rem}
+    .mbar{display:flex}
+    .rel{padding:3rem 0 4.4rem}
+    .foot-grid{grid-template-columns:1fr;gap:2rem}
+    .foot-main{grid-template-columns:1fr 1fr;gap:2rem 1.2rem}
+    .foot-news{flex-direction:column;align-items:stretch;padding:2.2rem 0}
+    .foot-news form{max-width:none}
+    .foot-trust{flex-direction:column;align-items:flex-start}
+    .pack-grid{grid-template-columns:1fr}
+    .delivery-steps{grid-template-columns:1fr 1fr;gap:1.6rem 1rem}
+    .brand-strip .wrap{grid-template-columns:1fr;padding-left:1.2rem;padding-right:1.2rem}
+    .bstat{border-left:none;border-top:1px solid var(--line);padding:1.6rem 0}
+    .bstat:first-child{border-top:none}
+    .pdp-tabs{top:57px}
+    .pdp-tabs .wrap{gap:1.3rem;overflow-x:auto}
+    .zoom-pane,.lens{display:none!important}
+    .rating-head{gap:1.2rem}
+    .rating-num{font-size:2.4rem}
+    .cert-strip{flex-direction:column;align-items:flex-start;gap:.7rem}
+    .lb-prev,.lb-next{min-width:40px;min-height:40px}
+  }
+</style>
+</head>
+<body>
+
+<div class="util-bar">
+  <div class="util-in">
+    <div class="util-l">
+      <span class="promo"><svg viewBox="0 0 24 24"><path d="M2 16V6a1 1 0 0 1 1-1h11v11"/><path d="M14 9h4l3 3v4h-2"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>7.000 ₺ üzeri kargo ücretsiz</span>
+      <a href="tel:+902125229262">+90 212 522 92 62</a>
+    </div>
+    <div class="util-r">
+      <a href="https://manosistanbul.com/siparis-takibi">Sipariş Takibi</a>
+      <a href="https://manosistanbul.com/goruntulu-urun-danismanligi">Görüntülü Danışmanlık</a>
+      <span>TRY ₺</span>
+    </div>
+  </div>
+</div>
+<header id="header">
+  <div class="head-in">
+    <div class="head-l">
+      <nav aria-label="Ana menü">
+        <a href="https://manosistanbul.com/yeni-gelenler">Yeni Gelenler</a>
+        <div class="has-mega" id="megaWrap">
+          <button class="mega-trigger" id="megaTrigger" aria-expanded="false">Ürünler <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="mega" id="megaPanel">
+            <div class="mega-in">
+              <div class="mega-col">
+                <h5><img id="megaImgRing" alt=""> Yüzükler</h5>
+                <a href="https://manosistanbul.com/yuzukler/soliter">Soliter</a>
+                <a href="https://manosistanbul.com/yuzukler/alyans">Alyans</a>
+                <a href="https://manosistanbul.com/yuzukler/taslilar">Taşlı Modeller</a>
+                <a href="https://manosistanbul.com/yuzukler/sade">Sade Halkalar</a>
+                <a class="all" href="https://manosistanbul.com/yuzukler">Tüm Yüzükler →</a>
+              </div>
+              <div class="mega-col">
+                <h5><img id="megaImgNeck" alt=""> Kolyeler</h5>
+                <a href="https://manosistanbul.com/kolyeler/italyan-zincir">İnce Zincir</a>
+                <a href="https://manosistanbul.com/kolyeler/imza-kolye">İmza Kolye</a>
+                <a href="https://manosistanbul.com/kolyeler/harf-kolye">Harf &amp; Pandantif</a>
+                <a href="https://manosistanbul.com/kolyeler/katmanli">Katmanlı Setler</a>
+                <a class="all" href="https://manosistanbul.com/kolyeler">Tüm Kolyeler →</a>
+              </div>
+              <div class="mega-col">
+                <h5><img id="megaImgBrac" alt=""> Bileklikler</h5>
+                <a href="https://manosistanbul.com/bileklikler/zincir">Zincir Bileklik</a>
+                <a href="https://manosistanbul.com/bileklikler/kelepceler">Kelepçe</a>
+                <a href="https://manosistanbul.com/bileklikler/taslilar">Taşlı Modeller</a>
+                <a href="https://manosistanbul.com/bileklikler/ikili-set">İkili Set</a>
+                <a class="all" href="https://manosistanbul.com/bileklikler">Tüm Bileklikler →</a>
+              </div>
+              <div class="mega-col">
+                <h5><img id="megaImgEar" alt=""> Küpeler</h5>
+                <a href="https://manosistanbul.com/kupeler/halka-kupeler">Halka Küpe</a>
+                <a href="https://manosistanbul.com/kupeler/tektas">Tektaş</a>
+                <a href="https://manosistanbul.com/kupeler/sallantili">Sallantılı</a>
+                <a href="https://manosistanbul.com/kupeler/vida">Vida Küpe</a>
+                <a class="all" href="https://manosistanbul.com/kupeler">Tüm Küpeler →</a>
+              </div>
+              <a class="mega-feat" href="https://manosistanbul.com/urunler">
+                <img id="megaImgFeat" alt="Manos Gold Koleksiyonu">
+                <span class="mega-feat-txt">
+                  <span>Yeni Koleksiyon</span>
+                  <h4 class="display">Manos Gold</h4>
+                  <a href="https://manosistanbul.com/urunler">Koleksiyonu Keşfet →</a>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <a class="word" href="manos-istanbul-anasayfa-v5.html" aria-label="Manos İstanbul">
+      <svg class="word-mark" viewBox="0 0 24 24"><path d="M12 3l7 4v6c0 4.5-3 8-7 8s-7-3.5-7-8V7Z"/><path d="M9 8l3-2 3 2M12 6v14"/></svg>
+      <b class="display">Manos</b>
+    </a>
+
+    <div class="head-r">
+      <nav aria-label="Kurumsal menü">
+        <a href="https://manosistanbul.com/urunler?filter=ozel-koleksiyon">Özel Koleksiyon<span class="nav-tag">YENİ</span></a>
+        <a href="https://manosistanbul.com/hakkimizda">Hakkımızda</a>
+        <a href="https://manosistanbul.com/iletisim">İletişim</a>
+      </nav>
+      <span class="icon-divider"></span>
+      <div class="head-icons">
+        <button class="icon-btn" id="searchBtn" aria-label="Ara"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
+        <button class="icon-btn" id="favBtn" aria-label="Favoriler">
+          <svg viewBox="0 0 24 24"><path d="M12 21C7 16.5 3 13.2 3 9.3 3 6.4 5.2 4.5 7.7 4.5c1.7 0 3.3.9 4.3 2.4 1-1.5 2.6-2.4 4.3-2.4 2.5 0 4.7 1.9 4.7 4.8 0 3.9-4 7.2-9 11.7Z"/></svg>
+          <span class="count" id="favCount">0</span>
+        </button>
+        <button class="icon-btn" id="cartBtn" aria-label="Sepet">
+          <svg viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span class="count" id="cartCount">0</span>
+        </button>
+        <button class="icon-btn burger" id="burger" aria-label="Menü"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="search" id="search">
+    <div class="search-in">
+      <div class="search-field">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="searchInput" placeholder="Ne aramıştınız?" autocomplete="off">
+        <button class="search-close" id="searchClose" aria-label="Kapat">&times;</button>
+      </div>
+      <div class="search-hint" id="searchHint">Popüler: <b>Luna Eye</b>, <b>Kolye</b>, <b>Kelepçe</b></div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+</header>
+
+<nav class="crumbs" aria-label="Gezinme">
+  <a href="manos-istanbul-anasayfa-v5.html">Ana Sayfa</a><span>/</span>
+  <a href="https://manosistanbul.com/yuzukler">Yüzükler</a><span>/</span>
+  <b>Luna Eye Yüzük</b>
+</nav>
+
+<div class="pdp-tabs">
+  <div class="wrap">
+    <a href="#aciklama">Açıklama</a>
+    <a href="#ozellikler">Özellikler</a>
+    <a href="#yorumlar">Yorumlar (128)</a>
+  </div>
+</div>
+
+<main class="pdp" id="aciklama">
+  <section class="gallery" aria-label="Ürün görselleri">
+    <div class="thumbs" id="thumbs"></div>
+    <div class="stage" id="stage">
+      <img id="stageImg" alt="Luna Eye Yüzük">
+      <div class="hallmark"><b>585</b><span>14K El İşç.</span></div>
+      <span class="lens" id="lens"></span>
+      <div class="zoom-pane" id="zoomPane"></div>
+    </div>
+    <div class="note-line">
+      <svg viewBox="0 0 24 24"><path d="M12 3l7 8-7 10-7-10 7-8Z"/><path d="M5 11h14"/></svg>
+      <p><b>Atölyeden not:</b> Bu parça sipariş üzerine, Kapalıçarşı'daki atölyemizde sizin için üretilir. Taş elde seçilir, tek tek mıhlanır.</p>
+    </div>
+  </section>
+
+  <section class="info">
+    <p class="kind">Yüzük · Luna Serisi · R0107</p>
+    <h1 class="display">Luna Eye Yüzük</h1>
+    <div class="price-row">
+      <span class="price">12.150,00 ₺</span>
+      <span class="price-note">KDV dahil · yurtiçi kargo ücretsiz</span>
+    </div>
+    <div class="stock-line"><span class="dot"></span>Son 3 parça — bu ölçüde yeniden üretim 5-7 iş günü sürer</div>
+    <div class="installment">
+      <span>Tek çekim veya <b>9 taksit</b> — aylık <b id="instAmt">1.350,00 ₺</b></span>
+      <button id="instBtn">Tüm seçenekler</button>
+    </div>
+    <p class="desc">Ay'ın sükûnetini taşıyan Luna Eye; 14 ayar altın gövdesi ve göz formundaki yarı değerli taşıyla, tek başına ya da katmanlanarak taşınmak üzere tasarlandı.</p>
+
+    <div class="engrave">
+      <label><input type="checkbox" id="engraveChk"><span><b>İç yüzeye kazıma</b> — 3 harf veya tarih<small>+250,00 ₺ · üretim süresine 1 gün eklenir</small></span></label>
+      <div class="engrave-input" id="engraveInput">
+        <input type="text" maxlength="8" placeholder="Örn. M&amp;E 12.05" id="engraveText">
+        <span>+250,00 ₺</span>
+      </div>
+    </div>
+
+    <div class="opt">
+      <div class="opt-head"><h4>Altın Rengi</h4><span id="colorLabel">Sarı Altın</span></div>
+      <div class="swatches" id="swatches">
+        <button class="swatch sw-sari on" data-c="Sarı Altın" aria-label="Sarı Altın"></button>
+        <button class="swatch sw-yesil" data-c="Yeşil Altın" aria-label="Yeşil Altın"></button>
+        <button class="swatch sw-rose" data-c="Rose Altın" aria-label="Rose Altın"></button>
+      </div>
+    </div>
+
+    <div class="opt">
+      <div class="opt-head"><h4>Yüzük Ölçüsü</h4><button id="sizeGuideBtn">Ölçü Rehberi</button></div>
+      <div class="sizes" id="sizes"></div>
+    </div>
+
+    <div class="buy-row">
+      <div class="qty"><button id="qMinus">−</button><span id="qVal" class="mono">1</span><button id="qPlus">+</button></div>
+      <button class="btn-block" id="addBtn">Sepete Ekle — <span id="addPrice" class="mono">12.150,00 ₺</span></button>
+      <button class="fav-btn" id="pdpFav" aria-label="Favorilere ekle"><svg viewBox="0 0 24 24"><path d="M12 21C7 16.5 3 13.2 3 9.3 3 6.4 5.2 4.5 7.7 4.5c1.7 0 3.3.9 4.3 2.4 1-1.5 2.6-2.4 4.3-2.4 2.5 0 4.7 1.9 4.7 4.8 0 3.9-4 7.2-9 11.7Z"/></svg></button>
+    </div>
+
+    <a class="wa-ask" href="https://wa.me/905455229262">
+      <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.6.8 5 2.3 7L4 29l7.3-2.3c2 1.1 4.2 1.6 6.4 1.4 6.6-.6 11.6-6.3 11.2-12.9C28.6 8.6 22.9 3 16 3Z"/></svg>
+      Bu ürün hakkında WhatsApp'tan sorun
+    </a>
+
+    <div class="specs" id="ozellikler">
+      <div><span>Ayar</span><span>14K · 585</span></div>
+      <div><span>Ağırlık</span><span>~1,33 gr</span></div>
+      <div><span>Üretim</span><span>5–7 iş günü</span></div>
+      <div><span>Ürün Kodu</span><span>R0107</span></div>
+      <div><span>Sertifika No.</span><span id="certNo">MNS-0451</span></div>
+    </div>
+
+    <div class="cert-strip">
+      <svg viewBox="0 0 48 48"><path d="M24 5l15 6v11c0 9-6 17-15 21C15 39 9 31 9 22V11l15-6Z"/><path d="M17 24l5 5 9-11"/></svg>
+      <p><b>Orijinallik Sertifikasıyla Gelir</b>Her parça, ayar damgası ve seri numarasıyla birlikte imzalı bir sertifika ve kadife kutuda teslim edilir.</p>
+    </div>
+
+    <div class="acc">
+      <details open><summary>Bakım Önerileri</summary><div>Parfüm, deniz suyu ve kimyasallardan uzak tutun; kullanmadığınızda kadife kesesinde saklayın. Yılda bir kez ücretsiz parlatma için atölyeye getirin.</div></details>
+      <details><summary>Üretim &amp; Kargolama</summary><div>Sipariş üzerine üretilir; süre 5–7 iş günüdür. Yurtiçi teslimat 1–2, yurtdışı (UPS) 2–4 iş günü sürer.</div></details>
+      <details><summary>Değişim &amp; İade</summary><div>Ölçü değişimi ilk 30 gün ücretsizdir. Kullanılmamış ürünlerde 14 gün içinde iade kabul edilir.</div></details>
+    </div>
+  </section>
+</main>
+
+<section class="pack-sec">
+  <div class="wrap">
+    <div class="section-top reveal">
+      <div><span class="eyebrow">Paketleme &amp; Teslimat</span><h2>Kutudan kapınıza.</h2></div>
+      <p>Paketleme seçiminiz sepet toplamına yansır; teslimat süresi seçtiğiniz ölçü ve kazımaya göre değişebilir.</p>
+    </div>
+    <div class="pack-grid" id="packGrid">
+      <button class="pack-card on" data-pack="standart" data-fee="0">
+        <span class="radio"></span>
+        <svg viewBox="0 0 48 48"><rect x="8" y="16" width="32" height="24" rx="1"/><path d="M8 24h32M20 16v-4h8v4"/></svg>
+        <h4>Standart Kutu</h4>
+        <p>Manos amblemli karton kutu ve kadife kese.</p>
+        <span class="pc-fee">Ücretsiz</span>
+      </button>
+      <button class="pack-card" data-pack="hediye" data-fee="0">
+        <span class="radio"></span>
+        <svg viewBox="0 0 48 48"><rect x="8" y="18" width="32" height="22" rx="1"/><path d="M8 26h32M24 18v22M17 18c-4 0-6-3-4-6 2-2 6 0 7 6Zm14 0c4 0 6-3 4-6-2-2-6 0-7 6Z"/></svg>
+        <h4>Hediye Kutusu</h4>
+        <p>Saten kurdele, el yazısı kart ve hediye paketi.</p>
+        <span class="pc-fee">Ücretsiz</span>
+      </button>
+      <button class="pack-card" data-pack="prestij" data-fee="450">
+        <span class="radio"></span>
+        <svg viewBox="0 0 48 48"><path d="M8 20l16-10 16 10v14l-16 10-16-10Z"/><path d="M8 20l16 10 16-10M24 30v10"/></svg>
+        <h4>Prestij Sandık</h4>
+        <p>Ahşap saklama sandığı, temizlik bezi ve genişletilmiş sertifika kartı.</p>
+        <span class="pc-fee">+450,00 ₺</span>
+      </button>
+    </div>
+
+    <div class="delivery-steps">
+      <div class="dstep"><span class="dn">01 — BUGÜN</span><h5>Sipariş Onayı</h5><p>Ödeme sonrası anında onay e-postası ve WhatsApp bildirimi.</p></div>
+      <div class="dstep"><span class="dn">02 — 5-7 İŞ GÜNÜ</span><h5>Atölyede Üretim</h5><p id="dStepProd">Taş seçimi, döküm ve mıhlama Kapalıçarşı'da elde yapılır.</p></div>
+      <div class="dstep"><span class="dn">03 — 1 GÜN</span><h5>Kalite Kontrolü</h5><p>Tartım, cila ve paketleme; hazır olunca <b id="shipDate" class="mono"></b> tarihine kadar kargoya verilir.</p></div>
+      <div class="dstep"><span class="dn">04 — 1-2 İŞ GÜNÜ</span><h5>Kargo &amp; Takip</h5><p>Takip linki SMS/e-posta ile gönderilir; yurtdışı UPS ile 2-4 gün.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="brand-strip">
+  <div class="wrap">
+    <div class="bstat"><b>1998</b><span>Kapalıçarşı'da Kuruluş</span></div>
+    <div class="bstat"><b>%100</b><span>El İşçiliği Üretim</span></div>
+    <div class="bstat"><b>585</b><span>Sertifikalı 14 Ayar</span></div>
+  </div>
+</section>
+
+<section class="reviews-sec" id="yorumlar">
+  <div class="wrap">
+    <div class="rating-head">
+      <div>
+        <div class="rating-num display">4.8</div>
+        <div class="stars">★★★★★</div>
+        <div class="rating-sub">128 DEĞERLENDİRME</div>
+      </div>
+      <div class="rev-bars">
+        <div class="rev-bar"><span>5</span><i style="--w:82%"></i><span>105</span></div>
+        <div class="rev-bar"><span>4</span><i style="--w:12%"></i><span>15</span></div>
+        <div class="rev-bar"><span>3</span><i style="--w:4%"></i><span>5</span></div>
+        <div class="rev-bar"><span>2</span><i style="--w:1%"></i><span>2</span></div>
+        <div class="rev-bar"><span>1</span><i style="--w:1%"></i><span>1</span></div>
+      </div>
+    </div>
+    <div class="rev-list">
+      <div class="rev">
+        <div class="rev-top"><b>D. Aydın</b><span class="stars">★★★★★</span></div>
+        <p>Fotoğraftakinden de zarif duruyor; taşın rengi ışıkta çok güzel değişiyor. Kutu ve sertifika hediye almış gibi hissettirdi.</p>
+        <span class="verified">✓ Doğrulanmış Alışveriş — Ölçü 12</span>
+      </div>
+      <div class="rev">
+        <div class="rev-top"><b>S. Kaya</b><span class="stars">★★★★★</span></div>
+        <p>Kazıma seçeneği tarih için tam istediğim gibi oldu. Kargo 6 gün sürdü, atölyeden çıktığı bilgisini WhatsApp'tan aldım.</p>
+        <span class="verified">✓ Doğrulanmış Alışveriş — Ölçü 14</span>
+      </div>
+      <div class="rev">
+        <div class="rev-top"><b>E. Toprak</b><span class="stars">★★★★☆</span></div>
+        <p>Parça çok güzel, tek notum ölçü rehberinin biraz daha görünür olması — görüntülü danışmanlık gerçekten işe yaradı.</p>
+        <span class="verified">✓ Doğrulanmış Alışveriş — Ölçü 10</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rel">
+  <div class="wrap">
+    <div class="section-top reveal">
+      <div><span class="eyebrow">Tamamlayın</span><h2>Birlikte şık durur.</h2></div>
+      <a class="wa-ask" href="https://manosistanbul.com/urunler">Tüm ürünler →</a>
+    </div>
+    <div class="rel-grid" id="relGrid"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-news">
+      <h3 class="display-i">Atölyeden ilk siz haberdar olun.</h3>
+      <form onsubmit="return false">
+        <input type="email" placeholder="E-posta adresiniz" required>
+        <button type="submit" id="footNewsBtn">Abone ol →</button>
+      </form>
+    </div>
+
+    <div class="foot-main">
+      <div class="foot-brand">
+        <span class="word"><b class="display">Manos</b></span>
+        <p>14K Gold. Kapalıçarşı'da üç kuşaktır el işçiliğiyle üretilen ince mücevher.</p>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/manosistanbul/" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="https://wa.me/905455229262" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.6-1.2A9 9 0 1 0 12 3Z"/><path d="M8.5 8.7c.2-.6.9-.6 1.2 0l.6 1.3c.2.4.1.8-.2 1l-.5.5c.4 1 1.2 1.8 2.2 2.2l.5-.5c.2-.3.6-.4 1-.2l1.3.6c.6.3.6 1 0 1.2-1.6.9-3.7.5-5.3-1.1-1.6-1.6-2-3.7-1.1-5.3Z"/></svg></a>
+          <a href="mailto:info@manosistanbul.com" aria-label="E-posta"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h5>Katalog</h5>
+        <a href="https://manosistanbul.com/kupeler">Küpeler</a>
+        <a href="https://manosistanbul.com/bileklikler">Bileklikler</a>
+        <a href="https://manosistanbul.com/kolyeler">Kolyeler</a>
+        <a href="https://manosistanbul.com/yuzukler">Yüzükler</a>
+      </div>
+      <div class="foot-col"><h5>Müşteri Hizmetleri</h5>
+        <a href="https://manosistanbul.com/sikca-sorulan-sorular">Sık Sorulan Sorular</a>
+        <a href="https://manosistanbul.com/teslimat-ve-iade-kosullari">Kargo &amp; İade</a>
+        <a href="#" id="footSizeGuide">Ölçü Rehberi</a>
+        <a href="https://manosistanbul.com/siparis-takibi">Sipariş Takibi</a>
+      </div>
+      <div class="foot-col"><h5>Kurumsal</h5>
+        <a href="https://manosistanbul.com/hakkimizda">Hakkımızda</a>
+        <a href="https://manosistanbul.com/iletisim">İletişim</a>
+        <a href="https://manosistanbul.com/mesafeli-satis-sozlesmesi">Mesafeli Satış Sözleşmesi</a>
+        <a href="https://manosistanbul.com/kvkk-aydinlatma-metni">KVKK Aydınlatma Metni</a>
+      </div>
+      <div class="foot-col"><h5>İletişim</h5>
+        <span>Nuruosmaniye Cd. No:31, Fatih</span>
+        <a href="tel:+902125229262">+90 212 522 92 62</a>
+        <a href="https://wa.me/905455229262">WhatsApp Hattı</a>
+        <span>Salı–Cumartesi, 10.00–19.00</span>
+      </div>
+    </div>
+
+    <div class="foot-trust">
+      <div class="badge-row">
+        <span>256-bit SSL</span><span>3D Secure</span><span>Kapalıçarşı Esnafı</span>
+      </div>
+      <div class="badge-row">
+        <span>Visa</span><span>Mastercard</span><span>Troy</span><span>9 Taksit</span>
+      </div>
+    </div>
+
+    <div class="foot-base">
+      <span>© 2026 MANOS İSTANBUL</span>
+      <span>585 · 14K · KAPALIÇARŞI</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <div class="mp"><i>Luna Eye Yüzük</i><b>12.150,00 ₺</b></div>
+  <button class="btn-block" id="mAdd">Sepete Ekle</button>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head"><h3>Sepetim</h3><button class="drawer-close" id="drawerClose">×</button></div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot">
+    <div class="drawer-total"><span>Ara Toplam</span><b id="cartTotal" class="mono">0,00 ₺</b></div>
+    <a class="btn-block" href="https://manosistanbul.com/sepet" style="justify-content:center">Siparişi Tamamla</a>
+  </div>
+</aside>
+
+<nav class="mnav" id="mnav">
+  <button class="mnav-close" id="mnavClose">×</button>
+  <a href="https://manosistanbul.com/yeni-gelenler">Yeni Gelenler</a>
+  <a href="https://manosistanbul.com/urunler">Ürünler</a>
+  <div class="mnav-cats">
+    <a href="https://manosistanbul.com/yuzukler">— Yüzükler</a>
+    <a href="https://manosistanbul.com/kolyeler">— Kolyeler</a>
+    <a href="https://manosistanbul.com/bileklikler">— Bileklikler</a>
+    <a href="https://manosistanbul.com/kupeler">— Küpeler</a>
+  </div>
+  <a href="https://manosistanbul.com/urunler?filter=ozel-koleksiyon">Özel Koleksiyon</a>
+  <a href="https://manosistanbul.com/hakkimizda">Hakkımızda</a>
+  <a href="https://manosistanbul.com/iletisim">İletişim</a>
+</nav>
+
+<div class="modal" id="sizeModal">
+  <div class="modal-card">
+    <button class="modal-close" id="sizeClose">×</button>
+    <h3 class="display">Ölçü Rehberi</h3>
+    <p>Mevcut bir yüzüğünüzün iç çapını ölçüp tabloda karşılığını bulun.</p>
+    <table class="size-table">
+      <thead><tr><th>Ölçü</th><th>İç Çap</th><th>Çevre</th></tr></thead>
+      <tbody>
+        <tr><td>8</td><td>15,3mm</td><td>48mm</td></tr>
+        <tr><td>10</td><td>15,9mm</td><td>50mm</td></tr>
+        <tr><td>12</td><td>16,5mm</td><td>52mm</td></tr>
+        <tr><td>14</td><td>17,2mm</td><td>54mm</td></tr>
+        <tr><td>16</td><td>17,8mm</td><td>56mm</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Kapat">×</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Önceki">‹</button>
+  <img id="lbImg" alt="Luna Eye Yüzük — büyütülmüş görsel">
+  <button class="lb-next" id="lbNext" aria-label="Sonraki">›</button>
+  <span class="lb-count" id="lbCount"></span>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const PX=(id,w)=>`https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+const TL=n=>n.toLocaleString('tr-TR',{minimumFractionDigits:2})+" ₺";
+
+/* Arama önerileri için tüm katalog (ana sayfadaki PRODUCTS ile aynı) */
+const PRODUCTS=[
+  {name:"Thalassa Link Bileklik",kind:"Bileklik · 14K",price:59264,img:PX(32382386,600),url:"https://manosistanbul.com/bileklikler/14k-bileklik-b0064-bb-404000000139"},
+  {name:"Dorica Icons Bangle",kind:"Kelepçe · 14K",price:32669,img:PX(8184263,600),url:"https://manosistanbul.com/bileklikler/kelepceler/14k-kelepce-bn0006-404000000164"},
+  {name:"Fluid Tail Kolye",kind:"Kolye · 14K",price:20610,img:PX(15272716,600),url:"https://manosistanbul.com/kolyeler/14k-kolye-n0210-404000000196"},
+  {name:"Luna Eye Yüzük",kind:"Yüzük · 14K",price:12150,img:PX(14058109,600),url:"manos-urun-detay-v5.html"},
+  {name:"Confetti Yüzük",kind:"Yüzük · 14K",price:16785,img:PX(10799225,600),url:"https://manosistanbul.com/yuzukler/14k-yuzuk-r0079-404000000119"},
+  {name:"The Sun II Kolye",kind:"Kolye · 14K",price:36584,img:PX(8706570,600),url:"https://manosistanbul.com/kolyeler/14k-kolye-n0119-404000000073"},
+];
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Galeri */
+const gal=[PX(14058109,900),PX(10799225,900),PX(6165,900),PX(32382386,900)];
+let galI=0;
+const stageImg=document.getElementById('stageImg'),thumbs=document.getElementById('thumbs');
+function renderThumbs(){thumbs.innerHTML=gal.map((s,i)=>`<button class="${i===galI?'on':''}" data-i="${i}"><img src="${s}" alt=""></button>`).join('');}
+function setStage(i){galI=i;stageImg.classList.add('fade');setTimeout(()=>{stageImg.src=gal[i];stageImg.classList.remove('fade');},reduced?0:180);renderThumbs();}
+thumbs.addEventListener('click',e=>{const b=e.target.closest('button');if(b)setStage(+b.dataset.i);});
+stageImg.src=gal[0];renderThumbs();
+document.getElementById('megaImgRing').src=PX(14058109,120);
+document.getElementById('megaImgNeck').src=PX(8706570,120);
+document.getElementById('megaImgBrac').src=PX(8184263,120);
+document.getElementById('megaImgEar').src=PX(12144990,120);
+document.getElementById('megaImgFeat').src=PX(1616096,700);
+
+/* Renk */
+let curColor="Sarı Altın",curSize=null,qty=1;
+document.getElementById('swatches').addEventListener('click',e=>{
+  const s=e.target.closest('.swatch');if(!s)return;
+  document.querySelectorAll('.swatch').forEach(x=>x.classList.remove('on'));
+  s.classList.add('on');curColor=s.dataset.c;document.getElementById('colorLabel').textContent=curColor;
+});
+
+/* Ölçü */
+const sizesEl=document.getElementById('sizes');
+for(let s=7;s<=17;s++)sizesEl.insertAdjacentHTML('beforeend',`<button data-s="${s}">${s}</button>`);
+sizesEl.addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  sizesEl.querySelectorAll('button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');curSize=b.dataset.s;
+});
+
+/* Adet + kazıma + paketleme */
+const qVal=document.getElementById('qVal'),addPrice=document.getElementById('addPrice'),instAmt=document.getElementById('instAmt');
+const PRICE=12150,ENGRAVE_FEE=250;
+let engraveOn=false,packFee=0,packName="Standart Kutu";
+function unitPrice(){return PRICE+(engraveOn?ENGRAVE_FEE:0)+packFee;}
+function refreshPrice(){
+  const total=unitPrice()*qty;
+  addPrice.textContent=TL(total);
+  instAmt.textContent=TL(Math.round(total/9));
+}
+function setQty(n){qty=Math.max(1,n);qVal.textContent=qty;refreshPrice();}
+document.getElementById('qMinus').addEventListener('click',()=>setQty(qty-1));
+document.getElementById('qPlus').addEventListener('click',()=>setQty(qty+1));
+
+const packGrid=document.getElementById('packGrid');
+if(packGrid){
+  packGrid.addEventListener('click',e=>{
+    const b=e.target.closest('.pack-card');if(!b)return;
+    packGrid.querySelectorAll('.pack-card').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');packFee=+b.dataset.fee;packName=b.querySelector('h4').textContent;
+    refreshPrice();
+  });
+}
+
+const engraveChk=document.getElementById('engraveChk'),engraveInput=document.getElementById('engraveInput');
+engraveChk.addEventListener('change',()=>{
+  engraveOn=engraveChk.checked;
+  engraveInput.classList.toggle('on',engraveOn);
+  refreshPrice();
+});
+document.getElementById('instBtn').addEventListener('click',()=>showToast('Taksit seçenekleri bankanıza göre değişebilir'));
+refreshPrice();
+
+/* Kargo tarihi: bugün + 7 iş günü */
+(function(){
+  const el=document.getElementById('shipDate');if(!el)return;
+  let d=new Date(),n=0;
+  while(n<7){d.setDate(d.getDate()+1);if(d.getDay()!==0&&d.getDay()!==6)n++;}
+  el.textContent=d.toLocaleDateString('tr-TR',{day:'numeric',month:'long'});
+})();
+
+/* Paneller */
+const overlay=document.getElementById('overlay'),drawer=document.getElementById('drawer'),toast=document.getElementById('toast');
+let tT;
+function openP(el){el.classList.add('on');overlay.classList.add('on');document.body.classList.add('lock');}
+function closeAll(){document.querySelectorAll('.drawer,.mnav,.search,.modal').forEach(e=>e.classList.remove('on'));overlay.classList.remove('on');document.body.classList.remove('lock');}
+overlay.addEventListener('click',closeAll);
+addEventListener('keydown',e=>{if(e.key==='Escape')closeAll();});
+function showToast(msg,ok=true){toast.textContent=(ok?'✓ ':'! ')+msg;toast.classList.add('on');clearTimeout(tT);tT=setTimeout(()=>toast.classList.remove('on'),2200);}
+
+/* Sepet */
+const cart=new Map();
+const dbody=document.getElementById('drawerBody'),cartTotal=document.getElementById('cartTotal'),
+      cartCount=document.getElementById('cartCount'),favCount=document.getElementById('favCount');
+let favN=0;
+function renderCart(){
+  const items=[...cart.values()],n=items.reduce((a,c)=>a+c.qty,0);
+  cartCount.textContent=n;cartCount.classList.toggle('on',n>0);
+  cartTotal.textContent=TL(items.reduce((a,c)=>a+c.qty*c.price,0));
+  dbody.innerHTML=n?items.map(c=>`
+    <div class="cart-item" data-k="${c.key}">
+      <img src="${c.img}" alt="${c.name}">
+      <div><h4>${c.name}</h4><small>${c.meta}</small><span class="cp mono">${TL(c.price)}</span>
+        <div class="qty sm"><button data-a="-">−</button><span>${c.qty}</span><button data-a="+">+</button></div></div>
+      <button class="cart-x" data-a="x">×</button>
+    </div>`).join(''):`<p class="drawer-empty">Sepetiniz boş.</p>`;
+}
+dbody.addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  const k=b.closest('.cart-item')?.dataset.k,c=cart.get(k);if(!c)return;
+  if(b.dataset.a==='+')c.qty++;
+  if(b.dataset.a==='-'&&--c.qty<1)cart.delete(k);
+  if(b.dataset.a==='x')cart.delete(k);
+  renderCart();
+});
+function addMain(){
+  if(!curSize){showToast('Lütfen ölçü seçin',false);document.getElementById('sizes').scrollIntoView({behavior:reduced?'auto':'smooth',block:'center'});return;}
+  const engTxt=engraveOn?document.getElementById('engraveText').value.trim():'';
+  let meta=`${curColor} · Ölçü ${curSize}`;
+  if(engraveOn)meta+=` · Kazıma: ${engTxt||'—'}`;
+  if(packFee>0)meta+=` · ${packName}`;
+  const key="luna-"+curColor+"-"+curSize+"-"+(engraveOn?engTxt:'ne')+"-"+packName,c=cart.get(key);
+  c?c.qty+=qty:cart.set(key,{key,name:"Luna Eye Yüzük",meta,price:unitPrice(),qty,img:gal[0]});
+  renderCart();showToast('Sepete eklendi');openP(drawer);
+}
+document.getElementById('addBtn').addEventListener('click',addMain);
+document.getElementById('mAdd').addEventListener('click',addMain);
+document.getElementById('cartBtn').addEventListener('click',()=>{renderCart();openP(drawer);});
+document.getElementById('drawerClose').addEventListener('click',closeAll);
+renderCart();
+
+/* Favori */
+[document.getElementById('favBtn')].forEach(()=>{}); // header fav sayaç bağımsız
+document.getElementById('pdpFav').addEventListener('click',function(){
+  this.classList.toggle('liked');favN+=this.classList.contains('liked')?1:-1;
+  favCount.textContent=favN;favCount.classList.toggle('on',favN>0);
+  if(this.classList.contains('liked'))showToast('Favorilere eklendi');
+});
+
+/* Ölçü rehberi */
+document.getElementById('sizeGuideBtn').addEventListener('click',()=>openP(document.getElementById('sizeModal')));
+document.getElementById('sizeClose').addEventListener('click',closeAll);
+document.getElementById('footSizeGuide').addEventListener('click',e=>{e.preventDefault();openP(document.getElementById('sizeModal'));});
+document.getElementById('footNewsBtn').addEventListener('click',()=>showToast('Aboneliğiniz alındı'));
+
+/* Arama — üst barda açılır, canlı ürün önerisi gösterir */
+const searchPanel=document.getElementById('search'),searchResults=document.getElementById('searchResults'),
+      searchHint=document.getElementById('searchHint');
+function searchOpenP(){searchPanel.classList.add('on');megaClose();setTimeout(()=>searchInput.focus(),250);}
+function searchCloseP(){searchPanel.classList.remove('on');}
+document.getElementById('searchBtn').addEventListener('click',()=>searchPanel.classList.contains('on')?searchCloseP():searchOpenP());
+document.getElementById('searchClose').addEventListener('click',searchCloseP);
+document.addEventListener('click',e=>{if(!searchPanel.contains(e.target)&&e.target.id!=='searchBtn'&&!e.target.closest('#searchBtn'))searchCloseP();});
+addEventListener('keydown',e=>{if(e.key==='Escape')searchCloseP();});
+function renderSearch(q){
+  const query=q.trim().toLocaleLowerCase('tr');
+  searchHint.style.display=query?'none':'block';
+  if(!query){searchResults.innerHTML='';return;}
+  const hits=PRODUCTS.filter(p=>p.name.toLocaleLowerCase('tr').includes(query)||p.kind.toLocaleLowerCase('tr').includes(query)).slice(0,4);
+  searchResults.innerHTML=hits.length?`
+    <h6>Ürün Önerileri</h6>
+    <div class="sr-grid">${hits.map(p=>`
+      <a class="sr-card" href="${p.url}">
+        <span class="sr-img"><img src="${p.img}" alt="${p.name}" loading="lazy"></span>
+        <span class="sr-name">${p.name}</span>
+        <span class="sr-kind">${p.kind}</span>
+        <span class="sr-price mono">${TL(p.price)}</span>
+      </a>`).join('')}</div>
+    <a class="sr-all" href="https://manosistanbul.com/index.php?route=product/search&search=${encodeURIComponent(q.trim())}">"${q.trim()}" için tüm sonuçlar →</a>
+  `:`<p class="sr-empty">"${q.trim()}" için sonuç bulunamadı. Farklı bir arama deneyin veya <a href="https://wa.me/905455229262" style="color:var(--brass-deep)">WhatsApp'tan sorun</a>.</p>`;
+}
+searchInput.addEventListener('input',()=>renderSearch(searchInput.value));
+searchInput.addEventListener('keydown',e=>{
+  if(e.key==='Enter'&&searchInput.value.trim())
+    location.href='https://manosistanbul.com/index.php?route=product/search&search='+encodeURIComponent(searchInput.value.trim());
+});
+document.getElementById('burger').addEventListener('click',()=>openP(document.getElementById('mnav')));
+
+/* Mega menü */
+const megaWrap=document.getElementById('megaWrap'),megaTrigger=document.getElementById('megaTrigger');
+function megaOpen(){megaWrap.classList.add('open');megaTrigger.setAttribute('aria-expanded','true');searchCloseP();}
+function megaClose(){megaWrap.classList.remove('open');megaTrigger.setAttribute('aria-expanded','false');}
+megaTrigger.addEventListener('click',()=>megaWrap.classList.contains('open')?megaClose():megaOpen());
+if(matchMedia('(pointer:fine)').matches){
+  let hoverT;
+  megaWrap.addEventListener('mouseenter',()=>{clearTimeout(hoverT);megaOpen();});
+  megaWrap.addEventListener('mouseleave',()=>{hoverT=setTimeout(megaClose,150);});
+}
+document.addEventListener('click',e=>{if(!megaWrap.contains(e.target))megaClose();});
+addEventListener('keydown',e=>{if(e.key==='Escape')megaClose();});
+document.getElementById('megaPanel').addEventListener('click',e=>{if(e.target.closest('a'))megaClose();});
+document.getElementById('mnavClose').addEventListener('click',closeAll);
+
+/* İlgili ürünler */
+const REL=[
+  {name:"Confetti Yüzük",kind:"Yüzük · 14K",price:16785,weight:"1,69gr",img:PX(10799225,600),url:"https://manosistanbul.com/yuzukler/14k-yuzuk-r0079-404000000119"},
+  {name:"Fluid Tail Kolye",kind:"Kolye · 14K",price:20610,weight:"2,15gr",img:PX(15272716,600),url:"https://manosistanbul.com/kolyeler/14k-kolye-n0210-404000000196"},
+  {name:"Dorica Icons Bangle",kind:"Kelepçe · 14K",price:32669,weight:"4,10gr",img:PX(8184263,600),url:"https://manosistanbul.com/bileklikler/kelepceler/14k-kelepce-bn0006-404000000164"},
+  {name:"The Sun II Kolye",kind:"Kolye · 14K",price:36584,weight:"3,73gr",img:PX(8706570,600),url:"https://manosistanbul.com/kolyeler/14k-kolye-n0119-404000000073"},
+];
+document.getElementById('relGrid').innerHTML=REL.map(p=>`
+  <article class="product">
+    <div class="p-frame">
+      <a href="${p.url}"><img src="${p.img}" alt="${p.name}" loading="lazy"></a>
+      <div class="hallmark p-mark"><b>585</b><span>${p.weight}</span></div>
+    </div>
+    <div class="p-body">
+      <div><h3 class="p-name">${p.name}</h3><span class="p-kind">${p.kind}</span></div>
+      <span class="p-price mono">${TL(p.price)}</span>
+    </div>
+  </article>`).join('');
+
+/* Scroll: mobil bar + reveal */
+const mbar=document.getElementById('mbar');
+addEventListener('scroll',()=>mbar.classList.toggle('on',scrollY>460),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.2});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* Büyüteç merceği (yalnız masaüstü, hover) */
+const stageEl=document.getElementById('stage'),lens=document.getElementById('lens'),zoomPane=document.getElementById('zoomPane');
+if(matchMedia('(min-width:1024px)').matches&&matchMedia('(pointer:fine)').matches){
+  const LENS=140;
+  stageEl.addEventListener('mousemove',e=>{
+    const r=stageEl.getBoundingClientRect();
+    let x=e.clientX-r.left,y=e.clientY-r.top;
+    x=Math.max(LENS/2,Math.min(r.width-LENS/2,x));
+    y=Math.max(LENS/2,Math.min(r.height-LENS/2,y));
+    lens.style.width=lens.style.height=LENS+'px';
+    lens.style.left=(x-LENS/2)+'px';lens.style.top=(y-LENS/2)+'px';
+    zoomPane.style.backgroundImage=`url("${gal[galI]}")`;
+    zoomPane.style.backgroundSize=(r.width*2.6)+'px '+(r.height*2.6)+'px';
+    const px=(x/r.width)*100,py=(y/r.height)*100;
+    zoomPane.style.backgroundPosition=`${px}% ${py}%`;
+  });
+}
+
+/* Lightbox */
+const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg'),lbCount=document.getElementById('lbCount');
+function openLB(i){galI=i;lbImg.src=gal[i];lbCount.textContent=(i+1)+' / '+gal.length;lb.classList.add('on');document.body.classList.add('lock');}
+function closeLB(){lb.classList.remove('on');document.body.classList.remove('lock');}
+stageEl.addEventListener('click',()=>openLB(galI));
+document.getElementById('lbClose').addEventListener('click',closeLB);
+document.getElementById('lbPrev').addEventListener('click',()=>openLB((galI-1+gal.length)%gal.length));
+document.getElementById('lbNext').addEventListener('click',()=>openLB((galI+1)%gal.length));
+lb.addEventListener('click',e=>{if(e.target===lb)closeLB();});
+addEventListener('keydown',e=>{
+  if(!lb.classList.contains('on'))return;
+  if(e.key==='Escape')closeLB();
+  if(e.key==='ArrowLeft')openLB((galI-1+gal.length)%gal.length);
+  if(e.key==='ArrowRight')openLB((galI+1)%gal.length);
+});
+
+/* Sekmeli iç gezinme — scroll ile aktif sekme */
+const tabLinks=[...document.querySelectorAll('.pdp-tabs a')];
+const tabTargets=['aciklama','ozellikler','yorumlar'].map(id=>document.getElementById(id)).filter(Boolean);
+const tabIO=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      tabLinks.forEach(a=>a.classList.remove('on'));
+      const match=tabLinks.find(a=>a.getAttribute('href')==='#'+e.target.id);
+      if(match)match.classList.add('on');
+    }
+  });
+},{rootMargin:'-40% 0px -50% 0px'});
+tabTargets.forEach(el=>tabIO.observe(el));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Sepetim — Manos İstanbul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F1E8; --card:#FCF9F3; --ink:#191410; --smoke:#7C7164;
+    --gold:#AE8342; --gold-hi:#DCBF83;
+    --line:rgba(25,20,16,.12); --line-g:rgba(174,131,66,.35);
+    --ease:cubic-bezier(.22,.75,.25,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Manrope',sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:var(--gold);color:#fff}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;background:none;border:none;cursor:pointer;color:inherit}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+  .serif{font-family:'Marcellus',serif;font-weight:400}
+  .ital{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400}
+  .eyebrow{font-size:.68rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 3rem}
+
+  /* HEADER */
+  .bar{background:var(--ink);color:#D9CDB9;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;overflow:hidden;white-space:nowrap}
+  .bar-track{display:inline-flex;gap:5rem;padding:.55rem 0;width:max-content;animation:tick 30s linear infinite}
+  .bar-track b{font-weight:400;color:var(--gold-hi)}
+  @keyframes tick{to{transform:translateX(-50%)}}
+  header{position:sticky;top:0;z-index:100;background:rgba(246,241,232,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .head-in{max-width:1240px;margin:0 auto;padding:1rem 3rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2rem}
+  .head-back{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;display:inline-flex;gap:.6rem;align-items:center;justify-self:start}
+  .head-back::before{content:"←";color:var(--gold);transition:transform .3s}
+  .head-back:hover::before{transform:translateX(-5px)}
+  .logo-type{display:flex;flex-direction:column;align-items:center;line-height:1.1;text-align:center}
+  .logo-type b{font-family:'Marcellus',serif;font-weight:400;font-size:1.35rem;letter-spacing:.4em;padding-left:.4em}
+  .logo-type i{font-style:normal;font-size:.55rem;letter-spacing:.52em;padding-left:.52em;text-transform:uppercase;color:var(--gold)}
+  .head-secure{justify-self:end;display:inline-flex;gap:.6rem;align-items:center;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke)}
+  .head-secure svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.5}
+
+  /* ADIMLAR */
+  .steps{display:flex;justify-content:center;gap:0;padding:2.6rem 1rem 0;flex-wrap:wrap}
+  .step{display:flex;align-items:center;gap:.8rem;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--smoke)}
+  .step i{font-style:normal;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-family:'Marcellus',serif;font-size:.85rem;letter-spacing:0}
+  .step.on{color:var(--ink);font-weight:500}
+  .step.on i{background:var(--ink);color:var(--gold-hi);border-color:var(--ink)}
+  .step-sep{width:70px;height:1px;background:var(--line);margin:0 1.2rem;align-self:center}
+
+  /* SAYFA */
+  .page-head{text-align:center;padding:2.4rem 1rem 3rem}
+  .page-head h1{font-family:'Marcellus',serif;font-weight:400;font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;margin-top:.8rem}
+  .page-head p{color:var(--smoke);font-size:.94rem;margin-top:.5rem}
+
+  .cart-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:3rem;align-items:start;padding-bottom:5rem}
+
+  /* ÜRÜN LİSTESİ */
+  .list-head{display:grid;grid-template-columns:1fr 130px 110px 40px;gap:1rem;padding:0 0 1rem;border-bottom:1px solid var(--line);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--smoke)}
+  .item{display:grid;grid-template-columns:110px 1fr 130px 110px 40px;gap:1.2rem;align-items:center;padding:1.6rem 0;border-bottom:1px solid var(--line)}
+  .item-img{width:110px;height:110px;object-fit:cover;background:#fff;border:1px solid var(--line)}
+  .item-info h3{font-family:'Marcellus',serif;font-weight:400;font-size:1.15rem;line-height:1.25}
+  .item-info h3 a:hover{color:var(--gold)}
+  .item-info .meta{font-size:.74rem;letter-spacing:.08em;color:var(--smoke);margin:.25rem 0 .4rem}
+  .item-info .unit{font-size:.8rem;color:var(--gold);font-weight:500}
+  .item-links{display:flex;gap:1.1rem;margin-top:.5rem}
+  .item-links button{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke);border-bottom:1px solid var(--line);padding-bottom:.15rem;transition:color .3s}
+  .item-links button:hover{color:var(--gold)}
+  .qty{display:inline-flex;align-items:center;border:1px solid var(--line);justify-self:start}
+  .qty button{width:36px;height:36px;font-size:1rem;transition:background .2s}
+  .qty button:hover{background:rgba(174,131,66,.12)}
+  .qty span{min-width:32px;text-align:center;font-size:.88rem;font-weight:500}
+  .item-total{font-family:'Marcellus',serif;font-size:1.05rem;color:var(--ink)}
+  .item-x{color:var(--smoke);font-size:1.3rem;transition:color .3s;justify-self:center}
+  .item-x:hover{color:var(--ink)}
+
+  .atelier-strip{display:flex;gap:1rem;align-items:center;background:var(--card);border:1px solid var(--line-g);padding:1.1rem 1.3rem;margin-top:1.6rem}
+  .atelier-strip svg{width:30px;height:30px;flex:none;stroke:var(--gold);fill:none;stroke-width:1.1}
+  .atelier-strip p{font-size:.82rem;color:var(--smoke)}
+  .atelier-strip b{color:var(--ink);font-weight:500}
+
+  /* BOŞ SEPET */
+  .empty{grid-column:1/-1;text-align:center;padding:4rem 1rem 5rem;display:none;flex-direction:column;align-items:center;gap:1.4rem}
+  .empty.on{display:flex}
+  .empty svg{width:76px;height:76px;stroke:var(--line-g);fill:none;stroke-width:1}
+  .empty h2{font-family:'Marcellus',serif;font-weight:400;font-size:1.8rem}
+  .empty p{color:var(--smoke);max-width:40ch}
+
+  /* ÖZET */
+  .summary{background:var(--card);border:1px solid var(--line);padding:2.2rem 2rem;position:sticky;top:96px;display:flex;flex-direction:column;gap:1.3rem}
+  .summary h2{font-family:'Marcellus',serif;font-weight:400;font-size:1.35rem;letter-spacing:.1em;text-transform:uppercase}
+  .sum-row{display:flex;justify-content:space-between;font-size:.9rem;color:var(--smoke)}
+  .sum-row b{color:var(--ink);font-weight:500}
+  .sum-row .free{color:var(--gold);font-weight:500;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase}
+  .sum-total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);padding-top:1.2rem;font-family:'Marcellus',serif;font-size:1.25rem}
+  .sum-total small{font-family:'Manrope';font-size:.68rem;color:var(--smoke);letter-spacing:.08em}
+
+  .gift{border:1px solid var(--line);padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:.8rem;background:var(--paper)}
+  .gift label{display:flex;gap:.8rem;align-items:flex-start;font-size:.86rem;cursor:pointer}
+  .gift input[type=checkbox]{appearance:none;width:19px;height:19px;border:1px solid var(--line-g);flex:none;margin-top:.15rem;display:grid;place-items:center;cursor:pointer;transition:all .25s}
+  .gift input[type=checkbox]:checked{background:var(--gold);border-color:var(--gold)}
+  .gift input[type=checkbox]:checked::after{content:"✓";color:#fff;font-size:.7rem}
+  .gift b{font-weight:500}
+  .gift small{display:block;color:var(--smoke);font-size:.76rem}
+  .gift textarea{display:none;border:1px solid var(--line);background:#fff;padding:.8rem .9rem;font-family:'Manrope';font-size:.85rem;resize:vertical;min-height:74px;color:var(--ink)}
+  .gift textarea.on{display:block}
+
+  .promo{display:flex;border:1px solid var(--line)}
+  .promo input{flex:1;min-width:0;border:none;background:#fff;padding:.85rem 1rem;font-family:'Manrope';font-size:.85rem;letter-spacing:.06em;color:var(--ink)}
+  .promo input::placeholder{color:var(--smoke)}
+  .promo button{background:var(--ink);color:#F2E9DA;padding:0 1.3rem;font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;transition:background .3s;flex:none}
+  .promo button:hover{background:var(--gold)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.8rem;padding:1.05rem 2.4rem;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;font-weight:500;transition:all .4s var(--ease);position:relative;overflow:hidden;min-height:52px}
+  .btn-ink{background:var(--ink);color:#F2E9DA;width:100%}
+  .btn-ink::before{content:"";position:absolute;inset:0;background:var(--gold);transform:translateY(101%);transition:transform .45s var(--ease)}
+  .btn-ink span{position:relative;z-index:1}
+  .btn-ink:hover::before{transform:translateY(0)}
+  .btn-line{border:1px solid var(--ink)}
+  .btn-line:hover{background:var(--ink);color:#F2E9DA}
+
+  .sum-trusts{display:flex;justify-content:center;gap:1.6rem;flex-wrap:wrap}
+  .sum-trusts span{display:inline-flex;gap:.5rem;align-items:center;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke)}
+  .sum-trusts svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.4}
+  .pay{display:flex;gap:.5rem;justify-content:center}
+  .pay span{border:1px solid var(--line);padding:.22rem .65rem;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--smoke)}
+  .sum-wa{text-align:center;font-size:.72rem;color:var(--smoke)}
+  .sum-wa a{color:var(--gold);border-bottom:1px solid var(--line-g)}
+  .sum-wa a:hover{color:var(--ink)}
+
+  /* CROSS-SELL */
+  .cross{padding:0 0 6rem}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2.4rem}
+  .sec-head h2{font-family:'Marcellus',serif;font-weight:400;font-size:clamp(1.6rem,3.2vw,2.4rem);line-height:1.12;margin-top:.8rem}
+  .rail{display:grid;grid-auto-flow:column;grid-auto-columns:min(280px,70vw);gap:1.4rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem;scrollbar-width:thin;scrollbar-color:var(--gold) transparent}
+  .rail::-webkit-scrollbar{height:4px}
+  .rail::-webkit-scrollbar-thumb{background:var(--line-g)}
+  .product{scroll-snap-align:start;background:var(--card);border:1px solid var(--line);transition:box-shadow .5s,transform .5s var(--ease)}
+  .product:hover{transform:translateY(-5px);box-shadow:0 30px 60px -40px rgba(25,20,16,.4)}
+  .p-visual{position:relative;overflow:hidden;aspect-ratio:1;background:#fff}
+  .p-visual img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+  .product:hover .p-visual img{transform:scale(1.06)}
+  .p-add{position:absolute;left:0;right:0;bottom:0;background:rgba(25,20,16,.92);color:#F2E9DA;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;font-weight:500;padding:.85rem;transform:translateY(101%);transition:transform .45s var(--ease),background .3s;width:100%}
+  .product:hover .p-add{transform:none}
+  .p-add:hover{background:var(--gold)}
+  @media(hover:none){.p-add{transform:none}}
+  .p-body{padding:1.1rem 1.2rem 1.3rem;text-align:center}
+  .p-kind{font-size:.58rem;letter-spacing:.32em;text-transform:uppercase;color:var(--smoke)}
+  .p-name{font-family:'Marcellus',serif;font-size:1.05rem;margin:.3rem 0 .35rem}
+  .p-price{font-size:.9rem;font-weight:500;color:var(--gold)}
+
+  /* FOOTER */
+  footer{background:#120E0B;color:#B9AD9A;padding:3.6rem 0 2.2rem}
+  .foot-in{display:flex;justify-content:space-between;gap:2.5rem;flex-wrap:wrap;align-items:flex-start}
+  .foot-in .logo-type{align-items:flex-start;text-align:left}
+  .foot-in .logo-type b{color:#F2E9DA}
+  .foot-links{display:flex;gap:2.2rem;flex-wrap:wrap;font-size:.8rem}
+  .foot-links a:hover{color:var(--gold-hi)}
+  .foot-base{margin-top:2.4rem;padding-top:1.5rem;border-top:1px solid rgba(174,131,66,.2);display:flex;justify-content:space-between;gap:1.2rem;flex-wrap:wrap;font-size:.7rem;color:#6E6455}
+
+  .toast{position:fixed;left:50%;bottom:calc(1.6rem + env(safe-area-inset-bottom));transform:translate(-50%,150%);z-index:160;background:var(--ink);color:#F2E9DA;padding:.85rem 1.6rem;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;transition:transform .5s var(--ease);white-space:nowrap;max-width:92vw}
+  .toast.on{transform:translate(-50%,0)}
+  .toast b{color:var(--gold-hi);font-weight:500}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+
+  @media(max-width:1024px){
+    .cart-grid{grid-template-columns:1fr;gap:2.4rem}
+    .summary{position:static}
+  }
+  @media(max-width:720px){
+    .wrap{padding:0 1.2rem}
+    .head-in{padding:.85rem 1.1rem;grid-template-columns:auto 1fr auto;gap:.8rem}
+    .head-back span{display:none}
+    .head-secure span{display:none}
+    .logo-type b{font-size:1.12rem}
+    .steps{padding-top:1.8rem}
+    .step-sep{width:26px;margin:0 .6rem}
+    .step span{display:none}
+    .step.on span{display:inline}
+    .list-head{display:none}
+    .item{grid-template-columns:86px 1fr;grid-template-rows:auto auto;gap:.6rem 1rem;position:relative;padding:1.3rem 0}
+    .item-img{width:86px;height:86px;grid-row:1/3}
+    .qty{grid-column:2}
+    .item-total{grid-column:2;font-size:1rem}
+    .item-x{position:absolute;top:1.1rem;right:0}
+    .summary{padding:1.8rem 1.4rem}
+    .cross{padding-bottom:4rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="bar" aria-hidden="true">
+  <div class="bar-track">
+    <span>Tüm yurtiçi siparişlerde <b>ücretsiz kargo</b></span>
+    <span>El işçiliği üretim: <b>5–7 iş günü</b></span>
+    <span>Her sipariş <b>hediye paketiyle</b> gönderilir</span>
+    <span>14K Gold <b>·</b> Fine Jewelry</span>
+    <span>Tüm yurtiçi siparişlerde <b>ücretsiz kargo</b></span>
+    <span>El işçiliği üretim: <b>5–7 iş günü</b></span>
+    <span>Her sipariş <b>hediye paketiyle</b> gönderilir</span>
+    <span>14K Gold <b>·</b> Fine Jewelry</span>
+  </div>
+</div>
+
+<header>
+  <div class="head-in">
+    <a class="head-back" href="https://manosistanbul.com/urunler"><span>Alışverişe Devam</span></a>
+    <a class="logo-type" href="https://manosistanbul.com/" aria-label="Manos İstanbul"><b>MANOS</b><i>İstanbul</i></a>
+    <span class="head-secure">
+      <svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="1.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      <span>Güvenli Alışveriş</span>
+    </span>
+  </div>
+</header>
+
+<!-- ADIMLAR -->
+<nav class="steps" aria-label="Sipariş adımları">
+  <div class="step on"><i>I</i><span>Sepet</span></div>
+  <span class="step-sep"></span>
+  <div class="step"><i>II</i><span>Teslimat</span></div>
+  <span class="step-sep"></span>
+  <div class="step"><i>III</i><span>Ödeme</span></div>
+</nav>
+
+<div class="page-head">
+  <p class="eyebrow reveal">Manos İstanbul</p>
+  <h1 class="reveal">Sepetiniz</h1>
+  <p class="reveal" id="pageSub">Seçtiğiniz parçalar, atölyemizde sizin için üretilmeye hazır.</p>
+</div>
+
+<div class="wrap">
+  <div class="cart-grid">
+
+    <!-- LİSTE -->
+    <section aria-label="Sepet ürünleri" id="listWrap">
+      <div class="list-head"><span>Ürün</span><span>Adet</span><span>Toplam</span><span></span></div>
+      <div id="items"></div>
+
+      <div class="atelier-strip reveal">
+        <svg viewBox="0 0 48 48"><path d="M24 6l4.6 9.3L39 17l-7.5 7.3L33.2 34 24 29.2 14.8 34l1.7-9.7L9 17l10.4-1.7L24 6Z"/></svg>
+        <p><b>Atölye takvimi:</b> Parçalarınız sipariş üzerine üretilir; bugün tamamlanan siparişler <b id="shipDate">…</b> tarihine kadar atölyeden çıkar ve ücretsiz kargoyla yola koyulur.</p>
+      </div>
+
+      <!-- BOŞ DURUM -->
+      <div class="empty" id="empty">
+        <svg viewBox="0 0 48 48"><path d="M10 14h28l-2.5 26h-23L10 14Z"/><path d="M17 14v-3a7 7 0 0 1 14 0v3"/><path d="M20 26c1.2 1.6 2.6 2.4 4 2.4s2.8-.8 4-2.4"/></svg>
+        <h2>Sepetiniz şimdilik boş.</h2>
+        <p>Işıltınızı yansıtacak parçayı birlikte bulalım — koleksiyonlarımız sizi bekliyor.</p>
+        <a class="btn btn-line" href="https://manosistanbul.com/koleksiyonlar">Koleksiyonları Keşfet</a>
+      </div>
+    </section>
+
+    <!-- ÖZET -->
+    <aside class="summary reveal" id="summary" aria-label="Sipariş özeti">
+      <h2>Sipariş Özeti</h2>
+      <div class="sum-row"><span>Ara Toplam</span><b id="subTotal">0,00 ₺</b></div>
+      <div class="sum-row"><span>Kargo</span><span class="free">Ücretsiz</span></div>
+      <div class="sum-row" id="discRow" style="display:none"><span>Hoş Geldiniz İndirimi</span><b id="discVal" style="color:var(--gold)">−0,00 ₺</b></div>
+
+      <div class="gift">
+        <label>
+          <input type="checkbox" id="giftWrap" checked>
+          <span><b>Hediye paketi</b><small>Tüm siparişler, imzalı Manos kutusu ve kadife kesesiyle ücretsiz paketlenir.</small></span>
+        </label>
+        <label>
+          <input type="checkbox" id="giftNoteChk">
+          <span><b>Hediye notu ekle</b><small>Notunuz el yazısı kartla pakete eklenir.</small></span>
+        </label>
+        <textarea id="giftNote" maxlength="200" placeholder="Mesajınız (en fazla 200 karakter)…"></textarea>
+      </div>
+
+      <div class="promo">
+        <input type="text" id="promoInput" placeholder="Promosyon kodu">
+        <button id="promoBtn">Uygula</button>
+      </div>
+
+      <div class="sum-total"><span>Toplam <small>KDV dahil</small></span><span id="grandTotal">0,00 ₺</span></div>
+
+      <a class="btn btn-ink" href="https://manosistanbul.com/sepet" id="checkoutBtn"><span>Güvenli Ödemeye Geç</span></a>
+
+      <div class="sum-trusts">
+        <span><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="1.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>256-bit SSL</span>
+        <span><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3Z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg>3D Secure</span>
+      </div>
+      <div class="pay"><span>Visa</span><span>Mastercard</span><span>Troy</span></div>
+      <p class="sum-wa">Kararsız mısınız? <a href="https://wa.me/905455229262">WhatsApp'tan danışın</a> ya da görüntülü randevu alın.</p>
+    </aside>
+  </div>
+</div>
+
+<!-- CROSS-SELL -->
+<section class="cross">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><p class="eyebrow">Son Bir Dokunuş</p><h2>Sepetinize yakışır.</h2></div>
+    </div>
+    <div class="rail" id="crossRail"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-in">
+      <span class="logo-type"><b>MANOS</b><i>İstanbul</i></span>
+      <nav class="foot-links">
+        <a href="https://manosistanbul.com/teslimat-ve-iade-kosullari">Teslimat &amp; İade</a>
+        <a href="https://manosistanbul.com/mesafeli-satis-sozlesmesi">Mesafeli Satış</a>
+        <a href="https://manosistanbul.com/kvkk-aydinlatma-metni">KVKK</a>
+        <a href="https://wa.me/905455229262">WhatsApp</a>
+      </nav>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Manos İstanbul — Nuruosmaniye, Fatih / İstanbul</span>
+      <span>+90 (212) 522 92 62</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"><b>✓</b>&nbsp; Güncellendi</div>
+
+<script>
+/* ---- Örnek görsel üretici ---- */
+const GOLD="#C9A15E",GOLD2="#E8D3A2";
+const PAL={ivory:["#FDFBF6","#F3EBDD"],blush:["#F9F0EA","#EFDFD3"],sage:["#F2F3EC","#E2E5D6"],stone:["#F4F2EE","#E6E1D8"]};
+const ART={
+ ring:`<g fill="none" stroke="${GOLD}" stroke-width="6"><circle cx="250" cy="300" r="105"/><circle cx="250" cy="300" r="88" opacity=".4"/><path d="M250 118 L296 164 L250 200 L204 164 Z" stroke-width="5"/><path d="M204 164 L296 164" stroke-width="3.5" opacity=".6"/></g><circle cx="250" cy="118" r="4" fill="${GOLD2}"/>`,
+ necklace:`<g fill="none" stroke="${GOLD}" stroke-width="5"><path d="M110 120 Q250 340 390 120" stroke-width="6"/><path d="M250 262 L282 300 L250 388 L218 300 Z"/></g>`,
+ bangle:`<g fill="none" stroke="${GOLD}"><ellipse cx="250" cy="260" rx="140" ry="128" stroke-width="10"/><circle cx="250" cy="132" r="16" stroke-width="6"/></g>`,
+ earring:`<g fill="none" stroke="${GOLD}" stroke-width="6"><path d="M175 120 q22 -26 44 0" stroke-width="5"/><circle cx="197" cy="220" r="72"/><path d="M305 120 q22 -26 44 0" stroke-width="5"/><path d="M327 144 L352 210 L327 300 L302 210 Z" stroke-width="5"/></g>`,
+ chain:`<g fill="none" stroke="${GOLD}" stroke-width="7">${[0,1,2,3,4].map(i=>`<ellipse cx="${120+i*66}" cy="${250+(i%2?26:-26)}" rx="42" ry="26" transform="rotate(${i%2?18:-18} ${120+i*66} ${250+(i%2?26:-26)})"/>`).join('')}</g>`
+};
+function ph(art,pal){
+  const[a,b]=PAL[pal];
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><defs><radialGradient id="g" cx="50%" cy="38%" r="75%"><stop offset="0%" stop-color="${a}"/><stop offset="100%" stop-color="${b}"/></radialGradient></defs><rect width="500" height="500" fill="url(#g)"/><ellipse cx="250" cy="425" rx="150" ry="18" fill="#191410" opacity=".08"/>${ART[art]}</svg>`;
+  return "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg);
+}
+const TL=n=>n.toLocaleString('tr-TR',{minimumFractionDigits:2})+" ₺";
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---- SEPET VERİSİ (demo — gerçek isim/fiyat/link) ---- */
+const cart=[
+  {key:"r0107",name:"Luna Eye Yüzük",meta:"Sarı Altın · Ölçü 12 · R0107",price:12150,qty:1,art:"ring",pal:"ivory",
+   url:"https://manosistanbul.com/yuzukler/14k-yuzuk-r0107-404000000127"},
+  {key:"n0210",name:"Fluid Tail Kolye",meta:"Yeşil Altın · 45cm · N0210",price:20610,qty:1,art:"necklace",pal:"sage",
+   url:"https://manosistanbul.com/kolyeler/14k-kolye-n0210-404000000196"},
+];
+let discount=0;
+
+const itemsEl=document.getElementById('items'),toast=document.getElementById('toast');
+let tT;
+function showToast(msg,ok=true){toast.innerHTML=(ok?'<b>✓</b>':'<b style="color:#C77">!</b>')+'&nbsp; '+msg;
+  toast.classList.add('on');clearTimeout(tT);tT=setTimeout(()=>toast.classList.remove('on'),2200);}
+
+function render(){
+  const empty=cart.length===0;
+  document.getElementById('empty').classList.toggle('on',empty);
+  document.getElementById('summary').style.display=empty?'none':'flex';
+  document.querySelector('.list-head').style.display=empty?'none':'';
+  document.querySelector('.atelier-strip').style.display=empty?'none':'flex';
+  document.getElementById('pageSub').textContent=empty
+    ?'Henüz bir parça seçmediniz.'
+    :'Seçtiğiniz parçalar, atölyemizde sizin için üretilmeye hazır.';
+
+  itemsEl.innerHTML=cart.map(c=>`
+    <div class="item" data-k="${c.key}">
+      <img class="item-img" src="${ph(c.art,c.pal)}" alt="${c.name}">
+      <div class="item-info">
+        <h3><a href="${c.url}">${c.name}</a></h3>
+        <p class="meta">${c.meta}</p>
+        <span class="unit">${TL(c.price)}</span>
+        <div class="item-links">
+          <button data-a="fav">Favorilere Taşı</button>
+          <button data-a="x2">Kaldır</button>
+        </div>
+      </div>
+      <div class="qty"><button data-a="-" aria-label="Azalt">−</button><span>${c.qty}</span><button data-a="+" aria-label="Arttır">+</button></div>
+      <span class="item-total">${TL(c.price*c.qty)}</span>
+      <button class="item-x" data-a="x" aria-label="Kaldır">×</button>
+    </div>`).join('');
+
+  const sub=cart.reduce((a,c)=>a+c.price*c.qty,0);
+  const disc=Math.round(sub*discount);
+  document.getElementById('subTotal').textContent=TL(sub);
+  document.getElementById('discRow').style.display=disc?'flex':'none';
+  document.getElementById('discVal').textContent='−'+TL(disc);
+  document.getElementById('grandTotal').textContent=TL(sub-disc);
+}
+itemsEl.addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  const k=b.closest('.item')?.dataset.k,i=cart.findIndex(c=>c.key===k);if(i<0)return;
+  const a=b.dataset.a;
+  if(a==='+')cart[i].qty++;
+  if(a==='-'&&--cart[i].qty<1)cart.splice(i,1);
+  if(a==='x'||a==='x2')cart.splice(i,1);
+  if(a==='fav'){cart.splice(i,1);showToast('Favorilere taşındı');}
+  render();
+});
+
+/* Hediye notu */
+const noteChk=document.getElementById('giftNoteChk'),note=document.getElementById('giftNote');
+noteChk.addEventListener('change',()=>note.classList.toggle('on',noteChk.checked));
+
+/* Promosyon (demo: MANOS10 → %10) */
+document.getElementById('promoBtn').addEventListener('click',()=>{
+  const v=document.getElementById('promoInput').value.trim().toUpperCase();
+  if(v==='MANOS10'){discount=.10;showToast('%10 indirim uygulandı');}
+  else{discount=0;showToast('Kod geçersiz',false);}
+  render();
+});
+
+/* Atölye tarihi */
+(function(){
+  let d=new Date(),n=0;
+  while(n<7){d.setDate(d.getDate()+1);if(d.getDay()!==0&&d.getDay()!==6)n++;}
+  document.getElementById('shipDate').textContent=d.toLocaleDateString('tr-TR',{day:'numeric',month:'long'});
+})();
+
+/* ---- CROSS-SELL ---- */
+const CROSS=[
+  {name:"Halka Küpe",kind:"Küpe · 14K",price:9450,art:"earring",pal:"blush",url:"https://manosistanbul.com/kupeler/halka-kupeler"},
+  {name:"Dorica Icons Bangle",kind:"Kelepçe · 14K",price:32669,art:"bangle",pal:"ivory",url:"https://manosistanbul.com/bileklikler/kelepceler/14k-kelepce-bn0006-404000000164"},
+  {name:"Thalassa Link Bileklik",kind:"Bileklik · 14K",price:59264,art:"chain",pal:"stone",url:"https://manosistanbul.com/bileklikler/14k-bileklik-b0064-bb-404000000139"},
+  {name:"The Sun II Kolye",kind:"Kolye · 14K",price:36584,art:"necklace",pal:"blush",url:"https://manosistanbul.com/kolyeler/14k-kolye-n0119-404000000073"},
+];
+document.getElementById('crossRail').innerHTML=CROSS.map((p,i)=>`
+  <article class="product">
+    <div class="p-visual">
+      <a href="${p.url}"><img src="${ph(p.art,p.pal)}" alt="${p.name}" loading="lazy"></a>
+      <button class="p-add" data-i="${i}">Sepete Ekle</button>
+    </div>
+    <div class="p-body">
+      <p class="p-kind">${p.kind}</p>
+      <h3 class="p-name"><a href="${p.url}">${p.name}</a></h3>
+      <p class="p-price">${TL(p.price)}</p>
+    </div>
+  </article>`).join('');
+document.getElementById('crossRail').addEventListener('click',e=>{
+  const b=e.target.closest('.p-add');if(!b)return;
+  const p=CROSS[+b.dataset.i];
+  const ex=cart.find(c=>c.key===p.name);
+  ex?ex.qty++:cart.push({key:p.name,name:p.name,meta:p.kind,price:p.price,qty:1,art:p.art,pal:p.pal,url:p.url});
+  render();showToast('Sepete eklendi');
+  scrollTo({top:0,behavior:reduced?'auto':'smooth'});
+});
+
+render();
+
+/* Reveal */
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
