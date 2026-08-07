@@ -4,7 +4,7 @@ const SECTIONS = [
   {
     title: 'Teslimat Koşulları',
     items: [
-      '7.000 ₺ ve üzeri siparişlerde yurtiçi kargo ücretsizdir.',
+      '20.000 ₺ ve üzeri siparişlerde yurtiçi kargo ücretsizdir.',
       'Yurtiçi teslimat: sipariş onayından itibaren 1–3 iş günü.',
       'Yurtdışı teslimat: UPS ile 2–5 iş günü (ücrete tabidir).',
       'Siparişler hafta içi 15:00\'e kadar verildiğinde aynı gün kargoya verilir.',

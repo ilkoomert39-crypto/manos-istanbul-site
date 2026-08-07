@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import { TL } from '@/lib/products';
 
-const KARGO_LIMIT = 7000;
+const KARGO_LIMIT = 20000;
 
 const STEPS = ['Sepet', 'Teslimat', 'Ödeme', 'Onay'];
 
@@ -52,7 +52,7 @@ export default function SepetPage() {
           </Link>
           <div className="cel-perks">
             {[
-              { icon: '✦', t: 'Ücretsiz Kargo', s: '7.000 ₺ üzeri siparişlerde' },
+              { icon: '✦', t: 'Ücretsiz Kargo', s: '20.000 ₺ üzeri siparişlerde' },
               { icon: '◈', t: 'İade Garantisi', s: '14 gün içinde koşulsuz iade' },
               { icon: '◇', t: 'Orijinal Sertifika', s: 'Her takıya ayar belgesi' },
             ].map((p) => (

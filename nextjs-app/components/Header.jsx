@@ -94,7 +94,7 @@ export default function Header() {
                 <circle cx="7" cy="18" r="1.6" />
                 <circle cx="17" cy="18" r="1.6" />
               </svg>
-              7.000 ₺ üzeri kargo ücretsiz
+              20.000 ₺ üzeri kargo ücretsiz
             </span>
             <a href="tel:+902125229262">+90 212 522 92 62</a>
           </div>

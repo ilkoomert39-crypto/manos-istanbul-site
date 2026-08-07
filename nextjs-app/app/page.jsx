@@ -28,7 +28,7 @@ export default function HomePage() {
       <section className="usp-strip">
         <div className="wrap usp-list">
           {[
-            { n: '01', title: 'Ücretsiz Kargo', text: '7.000 ₺ üzeri yurtiçi; yurtdışına UPS ile 2–4 iş günü.' },
+            { n: '01', title: 'Ücretsiz Kargo', text: '20.000 ₺ üzeri yurtiçi; yurtdışına UPS ile 2–4 iş günü.' },
             { n: '02', title: 'Görüntülü Danışmanlık', text: 'Ölçü ve taş seçimini uzman eşliğinde canlı yapın.' },
             { n: '03', title: 'Orijinallik Sertifikası', text: 'Her ürünle 585 ayar belgesi teslim edilir.' },
           ].map(u => (

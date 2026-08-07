@@ -6,8 +6,8 @@ import { TL, PRODUCTS } from '@/lib/products';
 export default function MiniCart() {
   const { items, miniOpen, setMiniOpen, updateQty, removeItem, total, addItem } = useCart();
 
-  const kargo = total >= 7000 ? 0 : 299;
-  const progress = Math.min((total / 7000) * 100, 100);
+  const kargo = total >= 20000 ? 0 : 299;
+  const progress = Math.min((total / 20000) * 100, 100);
 
   const suggestions = PRODUCTS
     .filter(p => !items.find(i => i.slug === p.slug))
@@ -32,15 +32,15 @@ export default function MiniCart() {
         </div>
 
         {/* Kargo progress */}
-        {total > 0 && total < 7000 && (
+        {total > 0 && total < 20000 && (
           <div className="mc-kargo">
-            <span>Ücretsiz kargoya <b className="mono">{TL(7000 - total)}</b> kaldı</span>
+            <span>Ücretsiz kargoya <b className="mono">{TL(20000 - total)}</b> kaldı</span>
             <div className="mc-kargo-track">
               <div className="mc-kargo-fill" style={{ width: `${progress}%` }} />
             </div>
           </div>
         )}
-        {total >= 7000 && (
+        {total >= 20000 && (
           <div className="mc-kargo-ok">✦ Ücretsiz kargo kazandınız</div>
         )}
 
