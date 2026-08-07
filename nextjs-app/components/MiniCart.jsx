@@ -5,11 +5,13 @@ import { TL, PRODUCTS } from '@/lib/products';
 
 export default function MiniCart() {
   const { items, miniOpen, setMiniOpen, updateQty, removeItem, total, addItem } = useCart();
+
   const kargo = total >= 7000 ? 0 : 299;
+  const progress = Math.min((total / 7000) * 100, 100);
 
   const suggestions = PRODUCTS
     .filter(p => !items.find(i => i.slug === p.slug))
-    .slice(0, 3);
+    .slice(0, 2);
 
   if (!miniOpen) return null;
 
@@ -17,11 +19,15 @@ export default function MiniCart() {
     <>
       <div className="mc-overlay" onClick={() => setMiniOpen(false)} />
       <aside className="mc-panel">
+
+        {/* Başlık */}
         <div className="mc-head">
-          <span className="display" style={{fontSize:'1.1rem'}}>Sepet</span>
+          <span className="display" style={{ fontSize: '1.1rem' }}>Sepet</span>
           <span className="mono mc-count">{items.length} ürün</span>
           <button className="mc-close" onClick={() => setMiniOpen(false)} aria-label="Kapat">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
           </button>
         </div>
 
@@ -29,20 +35,31 @@ export default function MiniCart() {
         {total > 0 && total < 7000 && (
           <div className="mc-kargo">
             <span>Ücretsiz kargoya <b className="mono">{TL(7000 - total)}</b> kaldı</span>
-            <div className="mc-kargo-track"><div className="mc-kargo-fill" style={{width:`${Math.min(total/7000*100,100)}%`}}/></div>
+            <div className="mc-kargo-track">
+              <div className="mc-kargo-fill" style={{ width: `${progress}%` }} />
+            </div>
           </div>
         )}
-        {total >= 7000 && <div className="mc-kargo-ok">✦ Ücretsiz kargo kazandınız</div>}
+        {total >= 7000 && (
+          <div className="mc-kargo-ok">✦ Ücretsiz kargo kazandınız</div>
+        )}
 
+        {/* Boş */}
         {items.length === 0 ? (
           <div className="mc-empty">
             <p>Sepetiniz boş.</p>
-            <button className="btn-block" style={{marginTop:'1rem',justifyContent:'center',fontSize:'.8rem'}} onClick={() => setMiniOpen(false)}>
-              <Link href="/urunler">Alışverişe Başla</Link>
-            </button>
+            <Link
+              href="/urunler"
+              className="btn-block"
+              style={{ marginTop: '1rem', justifyContent: 'center', fontSize: '.8rem' }}
+              onClick={() => setMiniOpen(false)}
+            >
+              Alışverişe Başla
+            </Link>
           </div>
         ) : (
           <>
+            {/* Ürünler */}
             <div className="mc-items">
               {items.map(c => (
                 <div key={c.key} className="mc-row">
@@ -50,7 +67,9 @@ export default function MiniCart() {
                     <img src={c.img} alt={c.name} />
                   </Link>
                   <div className="mc-info">
-                    <Link href={`/urunler/${c.slug}`} onClick={() => setMiniOpen(false)} className="mc-name">{c.name}</Link>
+                    <Link href={`/urunler/${c.slug}`} onClick={() => setMiniOpen(false)} className="mc-name">
+                      {c.name}
+                    </Link>
                     {c.meta && <span className="mc-meta mono">{c.meta}</span>}
                     <div className="mc-row-foot">
                       <div className="mc-qty">
@@ -66,35 +85,46 @@ export default function MiniCart() {
               ))}
             </div>
 
-            {/* Öneri */}
+            {/* Öneriler */}
             {suggestions.length > 0 && (
               <div className="mc-suggest">
-                <span className="eyebrow" style={{fontSize:'.6rem'}}>Bunları da beğenebilirsiniz</span>
+                <span className="eyebrow" style={{ fontSize: '.6rem', display: 'block', marginBottom: '.8rem' }}>
+                  Bunları da beğenebilirsiniz
+                </span>
                 <div className="mc-suggest-list">
-                  {suggestions.slice(0,2).map(p => (
+                  {suggestions.map(p => (
                     <div key={p.id} className="mc-suggest-item">
                       <img src={p.images[0]} alt={p.name} />
-                      <div>
-                        <span className="mc-name" style={{fontSize:'.78rem'}}>{p.name}</span>
-                        <span className="mc-price mono" style={{fontSize:'.76rem'}}>{TL(p.price)}</span>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div className="mc-name" style={{ fontSize: '.78rem' }}>{p.name}</div>
+                        <div className="mc-price mono" style={{ fontSize: '.76rem' }}>{TL(p.price)}</div>
                       </div>
-                      <button className="mc-add-small" onClick={() => addItem(p)}>+</button>
+                      <button className="mc-add-small" onClick={() => addItem(p)} aria-label="Sepete ekle">+</button>
                     </div>
                   ))}
                 </div>
               </div>
             )}
 
+            {/* Alt */}
             <div className="mc-foot">
               <div className="mc-total">
                 <span>Toplam</span>
                 <span className="mono">{TL(total + kargo)}</span>
               </div>
-              {kargo > 0 && <span className="mc-kargo-note mono">+ {TL(kargo)} kargo</span>}
-              <Link href="/sepet" className="btn-block mc-checkout" onClick={() => setMiniOpen(false)}>
+              {kargo > 0 && (
+                <span className="mc-kargo-note mono">+ {TL(kargo)} kargo</span>
+              )}
+              <Link
+                href="/sepet"
+                className="btn-block mc-checkout"
+                onClick={() => setMiniOpen(false)}
+              >
                 Sepete Git →
               </Link>
-              <button className="mc-continue" onClick={() => setMiniOpen(false)}>Alışverişe devam et</button>
+              <button className="mc-continue" onClick={() => setMiniOpen(false)}>
+                Alışverişe devam et
+              </button>
             </div>
           </>
         )}

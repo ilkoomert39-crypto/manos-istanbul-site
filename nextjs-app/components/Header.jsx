@@ -368,6 +368,7 @@ export default function Header() {
           <a href="tel:+902125229262" className="mnav-tel">+90 212 522 92 62</a>
         </div>
       </div>
+      <MiniCart />
     </>
   );
 }
