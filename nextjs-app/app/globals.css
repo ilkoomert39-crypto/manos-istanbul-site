@@ -1241,9 +1241,11 @@ header.hdr-scrolled{box-shadow:0 8px 40px -12px rgba(0,0,0,.7)}
 .share-btn:hover{color:var(--ink)}
 .share-feedback{font-size:.68rem;color:var(--brass);letter-spacing:.04em}
 
-.pdp-trust{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-top:.8rem}
-.pdp-trust-item{display:flex;flex-direction:column;align-items:center;gap:.3rem;padding:.7rem .4rem;background:var(--card);font-size:.72rem;text-align:center;color:var(--stone)}
-.pdp-trust-item span:first-child{font-size:1rem}
+.pdp-trust{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:.8rem;border:1px solid var(--line)}
+.pdp-trust-item{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:.9rem .5rem;background:var(--card);font-size:.68rem;text-align:center;color:var(--stone);border-left:1px solid var(--line);font-family:"IBM Plex Mono",monospace;letter-spacing:.04em;text-transform:uppercase;transition:background .2s}
+.pdp-trust-item:first-child{border-left:none}
+.pdp-trust-item:hover{background:var(--paper)}
+.pdp-trust-item svg{width:20px;height:20px;stroke:var(--brass);flex:none}
 
 .shake{animation:shake .5s ease both}
 @keyframes shake{0%,100%{transform:none}20%,60%{transform:translateX(-4px)}40%,80%{transform:translateX(4px)}}

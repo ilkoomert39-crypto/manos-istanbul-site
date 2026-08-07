@@ -99,8 +99,8 @@ export default function Header() {
             <a href="tel:+902125229262">+90 212 522 92 62</a>
           </div>
           <div className="util-r">
-            <a href="https://manosistanbul.com/siparis-takibi">Sipariş Takibi</a>
-            <a href="https://manosistanbul.com/goruntulu-urun-danismanligi">Görüntülü Danışmanlık</a>
+            <Link href="/iletisim">Sipariş Takibi</Link>
+            <Link href="/iletisim">Görüntülü Danışmanlık</Link>
             <span>TRY ₺</span>
           </div>
         </div>

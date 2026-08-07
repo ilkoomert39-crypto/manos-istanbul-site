@@ -295,17 +295,35 @@ export default function ProductDetailPage({ params }) {
 
             {/* Güven rozetleri */}
             <div className="pdp-trust">
-              {[
-                { icon: '🔒', text: 'Güvenli Ödeme' },
-                { icon: '↩', text: '14 Gün İade' },
-                { icon: '◈', text: 'Ayar Sertifikası' },
-                { icon: '🚚', text: 'Ücretsiz Kargo' },
-              ].map(t => (
-                <div key={t.text} className="pdp-trust-item">
-                  <span>{t.icon}</span>
-                  <span>{t.text}</span>
-                </div>
-              ))}
+              <div className="pdp-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+                  <path d="M12 2L4 6v6c0 5.5 3.6 9.7 8 11 4.4-1.3 8-5.5 8-11V6L12 2z"/>
+                  <path d="M8.5 12l2.5 2.5L15.5 9"/>
+                </svg>
+                <span>Güvenli Ödeme</span>
+              </div>
+              <div className="pdp-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+                  <path d="M4 12a8 8 0 1 0 8-8"/>
+                  <path d="M4 6v6h6"/>
+                </svg>
+                <span>14 Gün İade</span>
+              </div>
+              <div className="pdp-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+                  <path d="M12 3l2.2 6.5H21l-5.6 4 2.1 6.5L12 16l-5.5 4 2.1-6.5L3 9.5h6.8z"/>
+                </svg>
+                <span>Ayar Sertifikası</span>
+              </div>
+              <div className="pdp-trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+                  <path d="M1 16h16V8H1z"/>
+                  <path d="M17 10h3l3 5v3h-6"/>
+                  <circle cx="6" cy="19" r="2"/>
+                  <circle cx="18" cy="19" r="2"/>
+                </svg>
+                <span>Ücretsiz Kargo</span>
+              </div>
             </div>
           </section>
         </div>
