@@ -3,10 +3,11 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { PRODUCTS, TL, CATEGORIES } from '@/lib/products';
+import MiniCart from '@/components/MiniCart';
 import { useCart } from '@/context/CartContext';
 
 export default function Header() {
-  const { count, favCount } = useCart();
+  const { count, favCount, miniOpen, setMiniOpen } = useCart();
   const [megaOpen, setMegaOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [mnavOpen, setMnavOpen] = useState(false);
@@ -191,13 +192,13 @@ export default function Header() {
                   <path d="M21 21l-4.3-4.3" />
                 </svg>
               </button>
-              <button className="icon-btn" aria-label="Favoriler">
+              <Link href="/favoriler" className="icon-btn" aria-label="Favoriler">
                 <svg viewBox="0 0 24 24">
                   <path d="M12 21C7 16.5 3 13.2 3 9.3 3 6.4 5.2 4.5 7.7 4.5c1.7 0 3.3.9 4.3 2.4 1-1.5 2.6-2.4 4.3-2.4 2.5 0 4.7 1.9 4.7 4.8 0 3.9-4 7.2-9 11.7Z" />
                 </svg>
                 <span className={`count ${favCount > 0 ? 'on' : ''}`}>{favCount}</span>
-              </button>
-              <Link href="/sepet" className="icon-btn" aria-label="Sepet">
+              </Link>
+              <Link href="/sepet" className="icon-btn" aria-label="Sepet" onClick={(e)=>{e.preventDefault();setMiniOpen(v=>!v)}}>
                 <svg viewBox="0 0 24 24">
                   <path d="M6 8h12l-1 12H7L6 8Z" />
                   <path d="M9 8V6a3 3 0 0 1 6 0v2" />
@@ -234,6 +235,7 @@ export default function Header() {
                 autoComplete="off"
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
+                onKeyDown={(e) => { if (e.key === 'Enter' && q.trim()) { setSearchOpen(false); setQ(''); window.location.href = '/ara?q=' + encodeURIComponent(q.trim()); } }}
               />
               <button
                 className="search-close"

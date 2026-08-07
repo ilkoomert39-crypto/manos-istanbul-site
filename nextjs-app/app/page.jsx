@@ -2,6 +2,7 @@ import Link from 'next/link';
 import HeroSlider from '@/components/HeroSlider';
 import ProductCard from '@/components/ProductCard';
 import { PRODUCTS, CATEGORIES } from '@/lib/products';
+import RecentlyViewed from '@/components/RecentlyViewed';
 
 export const metadata = {
   title: 'Manos İstanbul — 14K Altın Mücevher, Kapalıçarşı',
@@ -172,6 +173,8 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      <RecentlyViewed />
 
       {/* INSTAGRAM / VİSUAL GRID */}
       <section className="section insta-section">

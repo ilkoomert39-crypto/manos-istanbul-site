@@ -5,6 +5,8 @@ import Footer from '@/components/Footer';
 import Toast from '@/components/Toast';
 import WelcomePopup from '@/components/WelcomePopup';
 import RevealObserver from '@/components/RevealObserver';
+import CookieBanner from '@/components/CookieBanner';
+import FloatingActions from '@/components/FloatingActions';
 
 export const metadata = {
   title: 'Manos İstanbul — 14K Altın Mücevher, Kapalıçarşı',
@@ -14,6 +16,7 @@ export const metadata = {
     title: 'Manos İstanbul — 14K Altın Mücevher',
     description: "Kapalıçarşı'da üç kuşaktır el işçiliğiyle üretilen ince mücevherler.",
     type: 'website',
+    siteName: 'Manos İstanbul',
   },
 };
 
@@ -23,10 +26,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,460;0,9..144,560;1,9..144,460;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@300;400;500&display=swap"
-          rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,460;0,9..144,560;1,9..144,460;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
       </head>
       <body>
         <CartProvider>
@@ -34,8 +34,10 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
           <Toast />
-          <RevealObserver />
           <WelcomePopup />
+          <RevealObserver />
+          <CookieBanner />
+          <FloatingActions />
         </CartProvider>
       </body>
     </html>
