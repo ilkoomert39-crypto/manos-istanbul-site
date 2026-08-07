@@ -14,7 +14,7 @@ export default function QuickView({ product, onClose }) {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
         <div className="qv-img">
-          <img src={product.images[0]} alt={product.name} />
+          <img src={product.images[0]} alt={product.name} style={{width:"100%",height:"100%",objectFit:"cover",position:"absolute",inset:0}} />
           {product.tag && <span className="p-tag">{product.tag}</span>}
         </div>
         <div className="qv-body">

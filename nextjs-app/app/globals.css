@@ -1288,3 +1288,14 @@ header.hdr-scrolled{box-shadow:0 8px 40px -12px rgba(0,0,0,.7)}
   .rv-grid{grid-template-columns:repeat(2,1fr)}
   .lb-arrow{display:none}
 }
+
+/* Quick view hover butonu */
+.p-quickview{
+  position:absolute;bottom:0;left:0;right:0;z-index:3;
+  background:rgba(32,28,24,.82);color:var(--paper);
+  font-family:'IBM Plex Mono';font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;
+  padding:.6rem;
+  opacity:0;transform:translateY(4px);
+  transition:opacity .25s,transform .25s;
+}
+.product:hover .p-quickview{opacity:1;transform:none}

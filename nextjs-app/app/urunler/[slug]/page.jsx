@@ -147,12 +147,12 @@ export default function ProductDetailPage({ params }) {
               ))}
             </div>
             <div className="stage">
-              {!imgLoaded && <div className="img-skeleton"/>}
+              
               <img
                 src={product.images[imgI]}
                 alt={product.name}
-                onLoad={() => setImgLoaded(true)}
-                style={{ opacity: imgLoaded ? 1 : 0, transition: 'opacity .3s' }}
+                
+                
               />
               <button className="stage-zoom" aria-label="Büyüt" onClick={() => setLightbox(true)}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
