@@ -175,8 +175,8 @@ export default function Header() {
               <Link href="/urunler?kategori=ozel-koleksiyon">
                 Özel Koleksiyon<span className="nav-tag">YENİ</span>
               </Link>
-              <a href="/hakkimizda">Hakkımızda</a>
-              <a href="/iletisim">İletişim</a>
+              <Link href="/hakkimizda">Hakkımızda</Link>
+              <Link href="/iletisim">İletişim</Link>
             </nav>
             <span className="icon-divider" />
             <div className="head-icons">
@@ -350,8 +350,8 @@ export default function Header() {
           <Link href="/urunler?kategori=ozel-koleksiyon" className="mnav-link mnav-gold" onClick={() => setMnavOpen(false)}>
             ✦ Özel Koleksiyon
           </Link>
-          <a href="https://manosistanbul.com/hakkimizda" className="mnav-link">Hakkımızda</a>
-          <a href="https://manosistanbul.com/iletisim" className="mnav-link">İletişim</a>
+          <Link href="/hakkimizda" className="mnav-link" onClick={() => setMnavOpen(false)}>Hakkımızda</Link>
+          <Link href="/iletisim" className="mnav-link" onClick={() => setMnavOpen(false)}>İletişim</Link>
         </nav>
 
         {/* Alt bilgi */}
